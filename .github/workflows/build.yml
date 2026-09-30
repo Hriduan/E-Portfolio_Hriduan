@@ -1,0 +1,48 @@
+# Builds the website by itself when you change about-me.txt, a project file or the C++ code.
+# You upload a file on GitHub -> this runs the C++ program -> the new pages are saved -> the site updates.
+name: Build website
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "about-me.txt"
+      - "projects/**"
+      - "ui/**"
+      - "main.cpp"
+  workflow_dispatch:          # also lets you press "Run workflow" by hand in the Actions tab
+
+permissions:
+  contents: write             # to save the new pages
+  pages: write                # to ask GitHub Pages for a new publish
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile the C++ program
+        run: g++ -std=c++17 main.cpp -o build_site
+
+      - name: Build the pages
+        run: ./build_site
+
+      - name: Save the new pages
+        run: |
+          rm -f build_site
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes in the pages."
+          else
+            git commit -m "Build website from source files"
+            git push
+          fi
+
+      - name: Ask GitHub Pages to publish again
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds"

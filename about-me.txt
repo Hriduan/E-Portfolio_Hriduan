@@ -1,0 +1,106 @@
+# =====================================================================
+#  about-me.txt   -   ALL THE INFORMATION ABOUT YOU IS HERE
+#
+#  Change any text below, save the file, then build again:
+#        g++ -std=c++17 main.cpp -o build_site
+#        ./build_site            (Windows: build_site.exe)
+#  Every page of the website is updated from this one file.
+#  (On GitHub the build runs by itself when you save this file.)
+#
+#  Rules:
+#   - Lines that start with #  are notes. The website ignores them.
+#   - "name: value" lines are single facts.
+#   - [section] lines start a list. Write one item per line.
+#   - In lists, the | sign separates the parts of one item.
+#     So do not use the | sign inside your own text.
+# =====================================================================
+
+
+# ---------- 1. BASIC INFO ----------
+site_name: Siam
+full_name: Hriduan Omor Siam
+role: Electrical & Electronic Engineering student
+tagline: I love building practical electronics projects that solve real-world problems.
+badge: Final-year EEE, AIUB
+email: hriduansiam101@gmail.com
+phone: +880 140 072 9346
+linkedin: https://www.linkedin.com/in/hriduan-omor-siam-27870b363
+location: Dhaka, Bangladesh
+university: American International University-Bangladesh (AIUB)
+university_short: AIUB
+field_short: EEE
+footer_note: Building practical electronics and learning chip design.
+
+# the copyright year: write a number (like 2026) or "auto" to use the year of the build
+year: auto
+
+# the web address of the live website (no slash at the end).
+# the contact form uses it to bring visitors back to the site after they send a message.
+site_url: https://hriduan.github.io/E-Portfolio_Hriduan
+
+# file names inside the assets folder
+profile_photo: profile.jpg
+cv_file: Hriduan_CV.pdf
+
+
+# ---------- 2. WORDS THAT CHANGE BY THEMSELVES ON THE HOME PAGE ----------
+[typing words]
+Electrical & Electronic Engineering student
+Chip design enthusiast
+RTL verification learner
+Electronics project builder
+
+
+# ---------- 3. ABOUT ME (one line = one paragraph) ----------
+[about]
+I am a final-year Electrical and Electronic Engineering student with a deep passion for electronics and automation. I love getting my hands dirty building practical projects that actually solve real-world problems.
+Whether it is designing a smart farming system or organizing student events, I always put my heart into what I do and try to learn something new every day.
+
+
+# ---------- 4. NUMBERS ON THE HOME PAGE ----------
+# format:  number | small text under it
+# {projects} is replaced by the real number of projects in the projects folder.
+[stats]
+3.87 | CGPA at AIUB
+{projects} | hands-on projects
+2 | team leader roles
+
+
+# ---------- 5. INTERESTS ----------
+# format:  name | short text
+[interests]
+Semiconductor | How tiny devices made of silicon run the modern world.
+Chip Design | Turning an idea into a working digital chip.
+RTL Verification | Checking that the chip design behaves exactly as planned.
+PnR | Place and route: giving the design a real layout on silicon.
+PV Cells | Photovoltaic cells that turn sunlight into electricity.
+Nanotechnology | Working with materials at a very tiny scale.
+Perovskites | A fast-growing material for next generation solar cells.
+
+
+# ---------- 6. EDUCATION ----------
+# format:  school | degree | place | result | year
+[education]
+American International University-Bangladesh (AIUB) | BSc in Electrical and Electronic Engineering (EEE) | Dhaka, Bangladesh | CGPA: 3.87 (9th semester completed) | Present
+Mymensingh Polytechnic Institute | Diploma in Electronics Engineering | Mymensingh, Bangladesh | CGPA: 3.18 | 2023
+Saint Andrews's High School | Secondary School Certificate (Science) | Haluaghat, Mymensingh | GPA: 4.55 | 2017
+
+
+# ---------- 7. LEADERSHIP & EXPERIENCE ----------
+# format:  tag | title | text
+[experience]
+Leadership | Hostel Leader | During my diploma, my teachers selected me to handle all the daily operations in the hostel. I took care of daily management and organized several events to keep our student community active and engaged.
+Competition | VLSITHON 3.0 Participant | Participated in VLSITHON 3.0 as a group leader. The event was organized by Ulkasemi.
+Competition | Poster Presentation Participant | Participated in the poster presentation competition as an author, organized by the Bangladesh Youth Nuclear Congress (BYNC), as part of I4N x INNOVENTURE Bangladesh 2026.
+Event | Semiconductor Symposium Attendee | Attended the National Semiconductor Symposium & BEAR Summit 2026.
+Visit | Industrial Tour | Attended an industrial tour to PGCB (Power Grid Company of Bangladesh), organized by my university.
+Learning | Continuous Learner | I regularly attend engineering seminars at my university to keep up with the latest industry trends and learn beyond my regular classroom syllabus.
+
+
+# ---------- 8. SKILLS ----------
+# format:  group title | skill 1, skill 2, skill 3
+[skills]
+Technical Skills | Circuit design, Microcontrollers, RFID, Electronics engineering, Solar energy setups
+Programming Skills | C/C++ (Intermediate), MATLAB (Intermediate), System Verilog (Intermediate)
+Simulation Skills | Multisim, Cadence Virtuoso, Cadence Genus, Cadence Innovus, RealVNC
+Soft Skills | Paperwork and documentation, Organizing events, Leading teams, Communication

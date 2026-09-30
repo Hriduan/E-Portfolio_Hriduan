@@ -1,0 +1,40 @@
+# =====================================================================
+#  HOW TO ADD A NEW PROJECT
+#   1. Copy this file in the projects folder and give it a new name,
+#      for example:  line-follower-robot.txt
+#      (the file name becomes the page name: project-line-follower-robot.html)
+#   2. Fill in the parts below and save.
+#   3. Build again (or upload to GitHub, it builds by itself).
+#  The new project shows up by itself on the Projects page, on the home page,
+#  in the footer, and the "hands-on projects" number on the home page goes up.
+#
+#  Files that start with an underscore (like this one) are ignored.
+#  Delete a project file and its page disappears on the next build.
+# =====================================================================
+
+# order: 1 shows first, 2 second, and so on. Without a number it goes to the end.
+order: 6
+title: My New Project
+category: Arduino
+summary: One short sentence for the project tile.
+
+# one line = one paragraph
+[details]
+First paragraph about the project.
+Second paragraph about the project.
+
+# one line = one point
+[features]
+First thing it does
+Second thing it does
+
+# small tags, separated with commas
+[tools]
+Arduino, Sensor, C++
+
+# format:  image file name | text under the image
+# Put the real photos in the assets folder with the same names.
+# If a photo is missing, the demo image is used. With no [photos] part at all, the demo image is shown.
+[photos]
+my-project-main.jpg | Main setup of the project
+my-project-circuit.jpg | Circuit and connections
