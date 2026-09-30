@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# 1. Check if there are actually any changes to upload
+if [ -z "$(git status --porcelain)" ]; then
+    echo "No new changes detected. Website is already up to date."
+    exit 0
+fi
+
+# 2. Stage all additions, updates, and deletions
+git add --all
+
+# 3. Find the highest existing version tag (sorts mathematically)
+latest_tag=$(git tag | sort -V | tail -n 1)
+
+# 4. Calculate the next mathematical sequence
+if [ -z "$latest_tag" ]; then
+    new_tag="v1.0"
+else
+    # Split "v1.12" into major (1) and minor (12)
+    major=$(echo $latest_tag | sed 's/v//' | cut -d. -f1)
+    minor=$(echo $latest_tag | cut -d. -f2)
+    
+    # Add 1 to the minor version
+    new_minor=$((minor + 1))
+    new_tag="v${major}.${new_minor}"
+fi
+
+# 5. Commit using ONLY the version number as the message
+git commit -m "$new_tag"
+
+# 6. Create the Git tag for the exact version
+git tag $new_tag
+
+# 7. Push the files and the new version tag to GitHub
+git push origin main
+git push origin $new_tag
+
+echo "Success! Update batch $new_tag has been sequenced and pushed."
