@@ -63,7 +63,8 @@ E-Portfolio_Hriduan/
 ├── README.md                ← you are here
 │
 ├── projects/                ← EVERYTHING about projects
-│   ├── digital-voting-machine.txt      one file = one project
+│   ├── fsmd-controller-asic-fpga.txt   one file = one project
+│   ├── digital-voting-machine.txt
 │   ├── smart-agriculture-model.txt
 │   ├── solar-street-light.txt
 │   ├── ultrasound-sonar-rfid.txt

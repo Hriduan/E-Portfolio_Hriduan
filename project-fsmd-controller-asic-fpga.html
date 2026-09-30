@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design, Synthesis, and Comparative Analysis of a Custom FSMD Controller using ASIC and FPGA Technologies | Hriduan Omor Siam</title>
+<meta name="description" content="E-portfolio of Hriduan Omor Siam, Electrical &amp; Electronic Engineering student at AIUB.">
+<meta name="theme-color" content="#07060d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='7' y='7' width='18' height='18' rx='4' fill='%238b7bff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+<div id="progress"></div>
+<header class="nav">
+<div class="wrap nav-in">
+<a class="logo" href="index.html"><span class="logo-mark"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect x="8" y="8" width="16" height="16" rx="3" fill="rgba(139,123,255,.2)" stroke="#8b7bff" stroke-width="2"/><path d="M12 3v5M16 3v5M20 3v5M12 24v5M16 24v5M20 24v5M3 12h5M3 16h5M3 20h5M24 12h5M24 16h5M24 20h5" stroke="#f2c66d" stroke-width="2" stroke-linecap="round"/></svg></span>Siam</a>
+<input type="checkbox" id="menuToggle" class="menu-check" aria-label="Open menu">
+<label for="menuToggle" class="menu-btn"><span></span><span></span><span></span></label>
+<nav id="menu">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="projects.html" class="active">Projects</a></li>
+<li><a href="experience.html">Experience</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main>
+<section class="wrap page-hero">
+<a class="crumb" href="projects.html">&larr; Back to all projects</a>
+<h1>Design, Synthesis, and Comparative Analysis of a Custom FSMD Controller using ASIC and FPGA Technologies</h1>
+<p>A custom FSMD multiplier controller taken through Cadence ASIC synthesis and Vivado FPGA implementation, then compared on area, timing and power.</p>
+</section>
+<section class="wrap section">
+<div class="detail">
+<div>
+<div class="gallery" id="gallery">
+<figure class="reveal"><a href="#pic-0"><img src="assets/fsmd-fpga-layout.jpg" alt="FPGA layout and timing summary in Vivado" loading="lazy"><figcaption>FPGA layout and timing summary in Vivado</figcaption></a></figure>
+<figure class="reveal"><a href="#pic-1"><img src="assets/fsmd-simulation-waveform.jpg" alt="Simulation waveform in Cadence SimVision" loading="lazy"><figcaption>Simulation waveform in Cadence SimVision</figcaption></a></figure>
+<figure class="reveal"><a href="#pic-2"><img src="assets/fsmd-genus-schematic.jpg" alt="Gate-level schematic after Genus synthesis" loading="lazy"><figcaption>Gate-level schematic after Genus synthesis</figcaption></a></figure>
+<figure class="reveal"><a href="#pic-3"><img src="assets/fsmd-vivado-schematic.jpg" alt="Synthesized schematic in Vivado" loading="lazy"><figcaption>Synthesized schematic in Vivado</figcaption></a></figure>
+<figure class="reveal"><a href="#pic-4"><img src="assets/fsmd-genus-area-power.jpg" alt="ASIC area and power reports" loading="lazy"><figcaption>ASIC area and power reports</figcaption></a></figure>
+<figure class="reveal"><a href="#pic-5"><img src="assets/fsmd-genus-timing.jpg" alt="ASIC setup timing report" loading="lazy"><figcaption>ASIC setup timing report</figcaption></a></figure>
+<figure class="reveal"><a href="#pic-6"><img src="assets/fsmd-vivado-utilization.jpg" alt="FPGA utilization and power in Vivado" loading="lazy"><figcaption>FPGA utilization and power in Vivado</figcaption></a></figure>
+<figure class="reveal"><a href="#pic-7"><img src="assets/fsmd-pnr-scripts.jpg" alt="Innovus place and route scripts" loading="lazy"><figcaption>Innovus place and route scripts</figcaption></a></figure>
+</div>
+<a class="lightbox" id="pic-0" href="#gallery"><div><img src="assets/fsmd-fpga-layout.jpg" alt=""><p>FPGA layout and timing summary in Vivado</p></div></a>
+<a class="lightbox" id="pic-1" href="#gallery"><div><img src="assets/fsmd-simulation-waveform.jpg" alt=""><p>Simulation waveform in Cadence SimVision</p></div></a>
+<a class="lightbox" id="pic-2" href="#gallery"><div><img src="assets/fsmd-genus-schematic.jpg" alt=""><p>Gate-level schematic after Genus synthesis</p></div></a>
+<a class="lightbox" id="pic-3" href="#gallery"><div><img src="assets/fsmd-vivado-schematic.jpg" alt=""><p>Synthesized schematic in Vivado</p></div></a>
+<a class="lightbox" id="pic-4" href="#gallery"><div><img src="assets/fsmd-genus-area-power.jpg" alt=""><p>ASIC area and power reports</p></div></a>
+<a class="lightbox" id="pic-5" href="#gallery"><div><img src="assets/fsmd-genus-timing.jpg" alt=""><p>ASIC setup timing report</p></div></a>
+<a class="lightbox" id="pic-6" href="#gallery"><div><img src="assets/fsmd-vivado-utilization.jpg" alt=""><p>FPGA utilization and power in Vivado</p></div></a>
+<a class="lightbox" id="pic-7" href="#gallery"><div><img src="assets/fsmd-pnr-scripts.jpg" alt=""><p>Innovus place and route scripts</p></div></a>
+<div class="text-block">
+<h2>About this project</h2>
+<p>This is my most recent project and it matches my interests in chip design perfectly. I designed a custom FSMD (finite state machine with datapath) controller, a multiplier that takes two 4-bit inputs and gives an 8-bit result. I checked it in simulation first: the SimVision waveform shows the output reaching 225 when both inputs are 15.</p>
+<p>Then I took the same design through two different technologies. For the ASIC side, I synthesized it with Cadence Genus. The report shows 117 cells, a cell area of 295.488, and the setup timing was met with 6793 ps of slack on a 10 ns clock. The total power was about 10.45 uW, mostly from the registers (74%) and the logic (22%). I also worked with the Innovus place and route scripts (init, place, CTS, route and signoff).</p>
+<p>For the FPGA side, I used Vivado 2020.2 on an Artix-7 part (xc7a100tcsg324-1). Synthesis finished with no errors or warnings, and the design is very small: 23 LUTs, 26 flip-flops and 18 IOs after implementation. Timing was met after synthesis, but after implementation the worst negative slack was -1.592 ns with 8 failing endpoints out of 80. The total on-chip power was 0.092 W, and almost all of it (99%) is the static power of the device.</p>
+<p>Putting the two sets of reports side by side helped me understand how the same RTL design behaves in an ASIC flow and in an FPGA flow, and how to read area, timing and power reports in both.</p>
+<h2>What it does</h2>
+<ul class="check">
+<li>Custom FSMD controller with a 4-bit x 4-bit multiplier datapath</li>
+<li>Functional simulation in Cadence SimVision (15 x 15 = 225)</li>
+<li>ASIC synthesis in Cadence Genus: 117 cells, setup slack of 6793 ps met</li>
+<li>ASIC power report: about 10.45 uW in total</li>
+<li>Place and route flow scripts for Cadence Innovus</li>
+<li>FPGA synthesis and implementation in Vivado 2020.2 for Artix-7</li>
+<li>FPGA result: 23 LUTs, 26 flip-flops, 0.092 W, timing not met after implementation</li>
+<li>Side-by-side comparison of area, timing and power for ASIC and FPGA</li>
+</ul>
+</div>
+</div>
+<aside class="card side-box reveal">
+<h3>Type</h3>
+<div class="tags"><span class="tag">ASIC &amp; FPGA</span></div>
+<h3>Tools and topics</h3>
+<div class="tags"><span class="tag">Cadence Genus</span><span class="tag">Cadence Innovus</span><span class="tag">Cadence SimVision</span><span class="tag">Vivado 2020.2</span><span class="tag">RTL design</span><span class="tag">ASIC flow</span><span class="tag">FPGA flow</span></div>
+<h3>Made by</h3>
+<p>Hriduan Omor Siam</p>
+</aside>
+</div>
+<div class="pager">
+<a href="project-audio-signal-filtering.html"><small>&larr; Previous project</small>Audio Signal Filtering</a>
+<a class="next" href="project-digital-voting-machine.html"><small>Next project &rarr;</small>Digital Voting Machine</a>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="wrap">
+<div class="footer-top">
+<div>
+<a class="logo" href="index.html"><span class="logo-mark"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect x="8" y="8" width="16" height="16" rx="3" fill="rgba(139,123,255,.2)" stroke="#8b7bff" stroke-width="2"/><path d="M12 3v5M16 3v5M20 3v5M12 24v5M16 24v5M20 24v5M3 12h5M3 16h5M3 20h5M24 12h5M24 16h5M24 20h5" stroke="#f2c66d" stroke-width="2" stroke-linecap="round"/></svg></span>Siam</a>
+<p>Hriduan Omor Siam, Electrical &amp; Electronic Engineering student at AIUB. Building practical electronics and learning chip design.</p>
+</div>
+<div>
+<h4>Pages</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="experience.html">Experience</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4>Projects</h4>
+<ul>
+<li><a href="project-fsmd-controller-asic-fpga.html">Design, Synthesis, and Comparative Analysis of a Custom FSMD Controller using ASIC and FPGA Technologies</a></li>
+<li><a href="project-digital-voting-machine.html">Digital Voting Machine</a></li>
+<li><a href="project-smart-agriculture-model.html">Smart Agriculture Model</a></li>
+<li><a href="project-solar-street-light.html">Solar Street Light &amp; Phone Charger</a></li>
+<li><a href="project-ultrasound-sonar-rfid.html">Ultrasound Sonar &amp; RFID Access</a></li>
+<li><a href="project-audio-signal-filtering.html">Audio Signal Filtering</a></li>
+</ul>
+</div>
+<div>
+<h4>Get in touch</h4>
+<ul>
+<li><a href="mailto:hriduansiam101@gmail.com">hriduansiam101@gmail.com</a></li>
+<li><a href="tel:+8801400729346">+880 140 072 9346</a></li>
+<li><a href="https://www.linkedin.com/in/hriduan-omor-siam-27870b363" target="_blank" rel="noopener">LinkedIn</a></li>
+<li><a href="assets/Hriduan_CV.pdf" download>Download CV</a></li>
+<li><span style="color:var(--muted);font-size:.95rem">Dhaka, Bangladesh</span></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<span>&copy; 2026 Hriduan Omor Siam. All rights reserved.</span>
+<span>E-PORTFOLIO</span>
+<a class="to-top" href="#top">Back to top</a>
+</div>
+</div>
+</footer>
+</body>
+</html>
