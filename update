@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# 1. Stage ALL changes (Adds new files, updates existing, and removes deleted files)
+git add --all
+
+# 2. Find the most recent version tag (e.g., v1.12)
+latest_tag=$(git describe --tags --abbrev=0 2>/dev/null)
+
+# 3. Calculate the next version number dynamically
+if [ -z "$latest_tag" ]; then
+    # If no tags exist yet, start at v1.0
+    new_tag="v1.0"
+else
+    # Extract major (1) and minor (12) from "v1.12"
+    major=$(echo $latest_tag | sed 's/v//' | cut -d. -f1)
+    minor=$(echo $latest_tag | cut -d. -f2)
+    
+    # Increase the minor version by 1 (e.g., 12 becomes 13)
+    new_minor=$((minor + 1))
+    new_tag="v${major}.${new_minor}"
+fi
+
+echo "🚀 Preparing to publish update as $new_tag..."
+
+# 4. Commit with the new version name
+git commit -m "Website update: $new_tag"
+
+# 5. Create the version tag in Git
+git tag $new_tag
+
+# 6. Push the files and the version tag to GitHub
+git push origin main
+git push origin $new_tag
+
+echo "✅ Success! Website updated to $new_tag and pushed to GitHub."
