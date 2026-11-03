@@ -116,15 +116,14 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   background-image:linear-gradient(rgba(139,123,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(139,123,255,.07) 1px,transparent 1px);background-size:26px 26px}
 .chip-label{position:absolute;top:16px;left:20px;font-size:.85rem;color:var(--gold)}
 .chip-svg{width:100%;max-width:340px;height:auto;filter:drop-shadow(0 0 25px rgba(139,123,255,.35))}
-.chip-die{fill:#120f24;stroke:var(--main);stroke-width:2}
-.chip-block{fill:rgba(139,123,255,.16);stroke:rgba(139,123,255,.65);stroke-width:1.5}
-.chip-bus{fill:none;stroke:var(--gold);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:5 7;animation:flow 2.2s linear infinite}
-.chip-bus-delay{stroke:var(--main2);animation-delay:-.8s}
-.chip-node{fill:var(--gold);animation:pulse 2s infinite}
-.chip-label{fill:#fff;font-family:var(--head);font-weight:700;font-size:12px;text-anchor:middle;letter-spacing:1px}
-.chip-port{fill:var(--gold);font-family:var(--head);font-size:10px;font-weight:700;letter-spacing:1px}
-.chip-core-text{fill:#fff;font-family:var(--head);font-weight:700;font-size:28px;text-anchor:middle}
-.chip-sub{fill:var(--gold);font-family:var(--head);font-size:9px;text-anchor:middle;letter-spacing:1px}
+.pin{fill:var(--gold)}
+.trace{fill:none;stroke:var(--main);stroke-width:1.6;stroke-dasharray:5 9;animation:flow 2.5s linear infinite;opacity:.85}
+.node{fill:var(--gold);animation:pulse 2s infinite}
+.die{fill:#120f24;stroke:var(--main);stroke-width:2}
+.die-inner{fill:none;stroke:rgba(139,123,255,.45);stroke-width:1}
+.die-text{fill:#fff;font-family:var(--head);font-weight:700;font-size:38px;text-anchor:middle}
+.die-sub{fill:var(--gold);font-family:var(--head);font-size:11px;text-anchor:middle}
+.chip-core{animation:chipGlow 2.4s ease-in-out infinite}
 .chip-stats{border-left:1px solid var(--line)}
 .stat{padding:26px 30px;border-bottom:1px solid var(--line)}
 .stat:last-child{border-bottom:none}
@@ -260,7 +259,13 @@ form textarea{min-height:150px;resize:vertical}
 .resume-copy p{color:var(--muted)}
 .resume-kicker{color:var(--gold)!important;font-size:.86rem;text-transform:uppercase;letter-spacing:.08em}
 .resume-viewer{padding:10px;min-height:620px}
-.resume-viewer object{display:block;width:100%;height:600px;border-radius:14px;background:#fff}
+.resume-viewer iframe{display:block;width:100%;height:600px;border:0;border-radius:14px;background:#fff}
+.resume-fallback{margin:12px 4px 2px;color:var(--muted);font-size:.9rem}
+.resume-fallback a{color:var(--gold)}
+.home-video{display:grid;grid-template-columns:.75fr 1.25fr;gap:26px;align-items:center;margin-top:24px;padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(135deg,rgba(139,123,255,.12),rgba(242,198,109,.04))}
+.home-video-copy h2{margin:12px 0 8px;font-size:clamp(1.5rem,3vw,2.2rem)}
+.home-video-copy p{color:var(--muted)}
+.home-video video{width:100%;max-height:360px;border-radius:14px;background:#05040a;box-shadow:0 16px 40px rgba(0,0,0,.28)}
 .video-card{display:flex;flex-direction:column;justify-content:center}
 .intro-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}
 .intro-state{color:var(--muted);font-size:.84rem}
@@ -300,6 +305,7 @@ form textarea{min-height:150px;resize:vertical}
 @media (max-width:900px){
   .hero,.about,.contact,.detail{grid-template-columns:1fr}
   .resume-layout,.video-layout{grid-template-columns:1fr}
+  .home-video{grid-template-columns:1fr}
   .hero{padding-top:50px}
   .photo-wrap{order:-1;max-width:260px}
   .photo-badge{left:50%;transform:translateX(-50%);bottom:-16px;white-space:nowrap}

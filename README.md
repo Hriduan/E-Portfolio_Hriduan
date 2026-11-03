@@ -30,7 +30,7 @@ Project imagery outside the FSMD gallery uses locally authored technical SVG dia
 | **C++ builds everything** | One program reads your text files and writes every `.html` page and `style.css`. |
 | **Zero JavaScript** | The loader, mobile menu, photo viewer, marquee and scroll effects are pure CSS. |
 | **One file for you** | Name, contact, skills, education, experience: all in [`about-me.txt`](about-me.txt). |
-| **One file per project** | Drop a file into [`projects/`](projects) and the site grows by itself. |
+| **One folder per project** | Drop a project folder into [`projects/`](projects) and the site grows by itself. |
 | **Self-updating numbers** | The "hands-on projects" number on the home page counts the project files. |
 | **Builds itself on GitHub** | Upload a file, and a GitHub Action rebuilds the pages for you. |
 
@@ -41,7 +41,7 @@ Project imagery outside the FSMD gallery uses locally authored technical SVG dia
 ```mermaid
 flowchart LR
     A["about-me.txt<br/><sub>who I am</sub>"] --> C{{"main.cpp<br/><sub>C++17</sub>"}}
-    B["projects/*.txt<br/><sub>what I built</sub>"] --> C
+    B["projects/*/<br/><sub>what I built</sub>"] --> C
     D["ui/*.h<br/><sub>header · footer · style</sub>"] --> C
     C --> E["index.html · about.html<br/>projects.html · project-*.html<br/>style.css"]
     E --> F(("GitHub<br/>Pages"))
@@ -63,19 +63,19 @@ E-Portfolio_Hriduan/
 ├── main.cpp                 ← run this: it builds the whole website
 ├── about-me.txt             ← ALL information about me (edit here)
 ├── index.html               ← the pages made by the program
-├── about.html · projects.html · resume.html · experience.html · video-introduction.html · contact.html
+├── about.html · projects.html · resume.html · experience.html · contact.html
 ├── project-<name>.html      ← one page per project (made by the program)
 ├── style.css                ← the design (made by the program)
 ├── README.md                ← you are here
 │
-├── projects/                ← EVERYTHING about projects
-│   ├── fsmd-controller-asic-fpga.txt   one file = one project
-│   ├── digital-voting-machine.txt
-│   ├── smart-agriculture-model.txt
-│   ├── solar-street-light.txt
-│   ├── ultrasound-sonar-rfid.txt
-│   ├── audio-signal-filtering.txt
-│   ├── _template.txt                   copy this to add a project
+├── projects/                ← every project owns its text and images
+│   ├── fsmd-controller-asic-fpga/      one folder = one project
+│   ├── digital-voting-machine/
+│   ├── smart-agriculture-model/
+│   ├── solar-street-light/
+│   ├── ultrasound-sonar-rfid/
+│   ├── audio-signal-filtering/
+│   ├── _template/                      copy this to add a project
 │   ├── project_loader.h                finds and reads the project files
 │   └── project_pages.h                 project tiles and project pages
 │
@@ -86,7 +86,7 @@ E-Portfolio_Hriduan/
 │   ├── pages.h                         home, about, experience, contact
 │   └── site_data.h                     reads about-me.txt
 │
-├── assets/                  ← ALL images + the CV
+├── assets/                  ← profile, CV, cover and optional intro video only
 └── .github/workflows/       ← automatic build on GitHub
 ```
 
@@ -113,20 +113,21 @@ Open `index.html` in a browser. Changed only a text file (`about-me.txt` or a pr
 | the numbers on the home page (CGPA, leader roles) | [`about-me.txt`](about-me.txt) → `[stats]` |
 | interests, education, experience, skills | [`about-me.txt`](about-me.txt) |
 | the words that type themselves on the home page | [`about-me.txt`](about-me.txt) → `[typing words]` |
-| a project (text, photos, tags) | that project's file in [`projects/`](projects) |
+| a project (text, photos, tags) | that project's folder in [`projects/`](projects) |
 | the footer (columns, links, bottom line) | [`ui/footer.h`](ui/footer.h) |
 | colors, fonts, spacing, animations | [`ui/style.h`](ui/style.h) (colors are at the top, in `:root`) |
 | menu links, loader, chip drawing | [`ui/layout.h`](ui/layout.h) |
 | layout of Home / About / Experience / Contact | [`ui/pages.h`](ui/pages.h) |
 | profile photo or CV | replace `assets/profile.jpg` or `assets/Hriduan_CV.pdf` (same file name) |
+| homepage introduction video | add `assets/Hriduan_intro.mp4`; it appears automatically when present |
 
 <br>
 
 ## `06` &nbsp; Add a new project
 
-1. Copy [`projects/_template.txt`](projects/_template.txt) and give the copy a new name, like `line-follower-robot.txt`.
-2. Fill in the title, category, summary, details, features, tools and photos.
-3. Put the real photos in `assets/` with the same names you wrote in the file.
+1. Copy [`projects/_template/`](projects/_template) and rename it, like `projects/line-follower-robot/`.
+2. Rename `_template.txt` inside it and fill in the title, category, summary, details, features, tools and photos.
+3. Put the project photos, schematics and outputs in that same project folder.
 4. Build again (or upload the file to GitHub).
 
     That is all. The new project appears on the **Projects page**, on the **home page** (the first four), in the **footer**, gets its own **detail page** with previous/next links, and the **"hands-on projects" number goes up**. Delete a project file and its page disappears on the next build.
@@ -158,7 +159,7 @@ line-robot-circuit.jpg | Circuit and connections
 
 - `order` decides the position (1 first). No number = goes to the end.
 - The **file name** becomes the page name: `line-follower-robot.txt` → `project-line-follower-robot.html`.
-- Missing photo? The build copies `assets/demo.jpg` under that name, so no picture is ever broken.
+- Missing photo? The build reports the missing local reference; it never creates a placeholder image.
 - Files starting with `_` are ignored.
 
 </details>

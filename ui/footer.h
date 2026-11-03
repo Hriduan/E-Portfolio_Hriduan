@@ -59,7 +59,6 @@ string footerHtml() {
     s += "<li><a class=\"footer-link\" href=\"tel:" + telHref() + "\">" + PHONE + "</a></li>\n";
     s += "<li><a class=\"footer-social\" href=\"" + LINKEDIN + "\" target=\"_blank\" rel=\"noopener\"><b>in</b> LinkedIn</a></li>\n";
     s += "<li><a class=\"footer-download\" href=\"resume.html\">Download CV</a></li>\n";
-    s += "<li><a class=\"footer-link\" href=\"video-introduction.html\">Video introduction</a></li>\n";
     s += "<li><span style=\"color:var(--muted);font-size:.95rem\">" + LOCATION + "</span></li>\n";
     s += "</ul>\n</div>\n</div>\n";
 

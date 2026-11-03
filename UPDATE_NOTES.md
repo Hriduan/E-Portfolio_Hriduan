@@ -16,7 +16,7 @@ The profile photograph and all seven remaining FSMD screenshots are unchanged; o
 
 These diagrams are not photographs of the actual projects. They must not be used as evidence of a build or measured result. Use your own project photographs and MATLAB screenshots if your professor requires original evidence. See `IMAGE_PROVENANCE.md`.
 
-The homepage now showcases four projects. A separate Resume page embeds the supplied PDF, and a Video Introduction page contains the required 1-2 minute recording outline and a visual introduction preview. The personal recording itself still needs to be supplied by Hriduan.
+The homepage now showcases four projects. The Resume page embeds the supplied PDF. Add `assets/Hriduan_intro.mp4` to show a personal introduction video on the homepage; when absent, no empty video placeholder is rendered.
 
 ## Phone updates
 

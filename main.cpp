@@ -42,19 +42,6 @@ void writeFile(const string& name, const string& text) {
     cout << "  made " << name << endl;
 }
 
-// copy a file (overwrite if it already exists); never stops the build
-void copyFile(const string& from, const string& to) {
-    if (!fs::exists(from)) {
-        cout << "  WARNING: cannot find " << from << endl;
-        return;
-    }
-    try {
-        fs::copy_file(from, to, fs::copy_options::overwrite_existing);
-    } catch (const exception& e) {
-        cout << "  WARNING: could not copy " << from << " (" << e.what() << ")" << endl;
-    }
-}
-
 int main() {
     cout << "Building the website..." << endl;
 
@@ -93,8 +80,8 @@ int main() {
     writeFile("projects.html", projectsPage());
     writeFile("resume.html", resumePage());
     writeFile("experience.html", experiencePage());
-    writeFile("video-introduction.html", videoIntroductionPage());
     writeFile("contact.html", contactPage());
+    if (fs::exists("video-introduction.html")) fs::remove("video-introduction.html");
 
     // 5. one page for every project
     set<string> madePages;
@@ -124,20 +111,7 @@ int main() {
         }
     }
 
-    // 8. project images live in the same assets folder.
-    //    if a photo is missing, the demo image is copied with that name,
-    //    so the website never shows a broken picture.
-    for (int i = 0; i < (int)projects.size(); i++) {
-        for (int k = 0; k < (int)projects[i].photos.size(); k++) {
-            string path = ASSETS_DIR + "/" + projects[i].photos[k].file;
-            if (!fs::exists(path)) {
-                cout << "  no photo found for " << projects[i].photos[k].file << ", using the demo image" << endl;
-                copyFile(ASSETS_DIR + "/" + DEMO_IMAGE, path);
-            }
-        }
-    }
-
-    // 9. GitHub Pages should not use Jekyll
+    // 8. GitHub Pages should not use Jekyll
     writeFile(".nojekyll", "");
 
     cout << "Done! Open index.html in your browser." << endl;

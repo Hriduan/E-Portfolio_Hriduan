@@ -17,9 +17,8 @@ const vector<NavLink> navLinks = {
     {"Home",       "index.html"},
     {"About",      "about.html"},
     {"Projects",   "projects.html"},
-    {"Resume",     "resume.html"},
     {"Experience", "experience.html"},
-    {"Video intro", "video-introduction.html"},
+    {"Resume",     "resume.html"},
     {"Contact",    "contact.html"}
 };
 
@@ -108,15 +107,15 @@ string chipSide(int rotation) {
 }
 
 string chipSvg() {
-    string s = "<svg class=\"chip-svg\" viewBox=\"0 0 400 400\" role=\"img\" aria-label=\"Semiconductor signal-flow diagram\">\n";
-    s += "<rect class=\"chip-die\" x=\"26\" y=\"26\" width=\"348\" height=\"348\" rx=\"24\"/>\n";
-    s += "<path class=\"chip-bus\" d=\"M60 160H112M288 160H340M200 86V124M200 276V314\"/>\n";
-    s += "<path class=\"chip-bus chip-bus-delay\" d=\"M112 160H288M200 124V276\"/>\n";
-    s += "<rect class=\"chip-block\" x=\"112\" y=\"124\" width=\"176\" height=\"48\" rx=\"10\"/><text class=\"chip-label\" x=\"200\" y=\"154\">CONTROL</text>\n";
-    s += "<rect class=\"chip-block\" x=\"112\" y=\"228\" width=\"176\" height=\"48\" rx=\"10\"/><text class=\"chip-label\" x=\"200\" y=\"258\">DATAPATH</text>\n";
-    s += "<circle class=\"chip-node\" cx=\"60\" cy=\"160\" r=\"6\"/><circle class=\"chip-node\" cx=\"340\" cy=\"160\" r=\"6\"/><circle class=\"chip-node\" cx=\"200\" cy=\"86\" r=\"6\"/><circle class=\"chip-node\" cx=\"200\" cy=\"314\" r=\"6\"/>\n";
-    s += "<text class=\"chip-port\" x=\"42\" y=\"146\">IN</text><text class=\"chip-port\" x=\"319\" y=\"146\">OUT</text><text class=\"chip-port\" x=\"181\" y=\"72\">CLK</text><text class=\"chip-port\" x=\"172\" y=\"342\">RST</text>\n";
-    s += "<text class=\"chip-core-text\" x=\"200\" y=\"204\">" + FIELD_SHORT + "</text><text class=\"chip-sub\" x=\"200\" y=\"353\">REGISTERED DATA FLOW</text>\n</svg>\n";
+    string s = "<svg class=\"chip-svg\" viewBox=\"0 0 400 400\" role=\"img\" aria-label=\"Semiconductor chip drawing\">\n";
+    s += chipSide(0) + chipSide(90) + chipSide(180) + chipSide(270);
+    s += "<g class=\"chip-core\">\n";
+    s += "<rect class=\"die\" x=\"120\" y=\"120\" width=\"160\" height=\"160\" rx=\"14\"/>\n";
+    s += "<rect class=\"die-inner\" x=\"134\" y=\"134\" width=\"132\" height=\"132\" rx=\"8\"/>\n";
+    s += "<circle cx=\"142\" cy=\"142\" r=\"4\" fill=\"#f2c66d\"/>\n";
+    s += "<text class=\"die-text\" x=\"200\" y=\"210\">" + FIELD_SHORT + "</text>\n";
+    s += "<text class=\"die-sub\" x=\"200\" y=\"236\">RTL  to  Silicon</text>\n";
+    s += "</g>\n</svg>\n";
     return s;
 }
 

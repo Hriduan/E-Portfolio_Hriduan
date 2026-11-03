@@ -15,7 +15,8 @@ using namespace std;
 // one project tile (used on home and projects page)
 string projectTile(const Project& p) {
     string s = "<a class=\"tile reveal\" href=\"project-" + p.slug + ".html\">\n";
-    s += "<div class=\"tile-img\"><img src=\"" + assetUrl(p.photos[0].file) + "\" alt=\"" + p.title + "\" loading=\"lazy\">";
+    s += "<div class=\"tile-img\">";
+    if (!p.photos.empty()) s += "<img src=\"" + projectAssetUrl(p, p.photos[0].file) + "\" alt=\"" + p.title + "\" loading=\"lazy\">";
     s += "<span class=\"tile-cat\">" + p.category + "</span></div>\n";
     s += "<div class=\"tile-body\"><h3>" + p.title + "</h3><p>" + p.summary + "</p>";
     if (!p.imageNote.empty()) s += "<p class=\"image-note\">" + p.imageNote + "</p>";
@@ -52,13 +53,13 @@ string projectPage(int i) {
     if (!p.imageNote.empty()) s += "<p class=\"image-note\">" + p.imageNote + "</p>\n";
     s += "<div class=\"gallery\" id=\"gallery\">\n";
     for (int k = 0; k < (int)p.photos.size(); k++) {
-        s += "<figure class=\"reveal\"><a href=\"#pic-" + to_string(k) + "\"><img src=\"" + assetUrl(p.photos[k].file) + "\" alt=\"" + p.photos[k].caption + "\" loading=\"lazy\">";
+        s += "<figure class=\"reveal\"><a href=\"#pic-" + to_string(k) + "\"><img src=\"" + projectAssetUrl(p, p.photos[k].file) + "\" alt=\"" + p.photos[k].caption + "\" loading=\"lazy\">";
         s += "<figcaption>" + p.photos[k].caption + "</figcaption></a></figure>\n";
     }
     s += "</div>\n";
     // the big version of each photo (opens when a photo is clicked, click again to close)
     for (int k = 0; k < (int)p.photos.size(); k++) {
-        s += "<a class=\"lightbox\" id=\"pic-" + to_string(k) + "\" href=\"#gallery\"><div><img src=\"" + assetUrl(p.photos[k].file) + "\" alt=\"\"><p>" + p.photos[k].caption + "</p></div></a>\n";
+        s += "<a class=\"lightbox\" id=\"pic-" + to_string(k) + "\" href=\"#gallery\"><div><img src=\"" + projectAssetUrl(p, p.photos[k].file) + "\" alt=\"\"><p>" + p.photos[k].caption + "</p></div></a>\n";
     }
 
     // text

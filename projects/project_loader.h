@@ -1,9 +1,9 @@
 // =====================================================
 //  project_loader.h  -  FINDS THE PROJECTS BY ITSELF
-//  It looks into the "projects" folder and reads every .txt file there.
-//  One file = one project. Add a file and the new project
+//  It looks into each project folder and reads its .txt file.
+//  One folder = one project. Add a folder and the new project
 //  appears everywhere on the website after the next build.
-//  (Copy projects/_template.txt to start a new one.)
+//  (Copy projects/_template to start a new one.)
 // =====================================================
 #pragma once
 #include <string>
@@ -14,7 +14,7 @@
 using namespace std;
 
 struct Photo {
-    string file;      // image file name (inside the assets folder)
+    string file;      // image file name (inside the project's folder)
     string caption;   // text shown under the image
 };
 
@@ -30,6 +30,7 @@ struct Project {
     vector<Photo> photos;       // first photo is used on the tile
     int order = 1000;           // small number = shown first
     string fileName;            // the .txt file it came from
+    string webDir;              // directory containing this project's page assets
 };
 
 // the folder where the project files live
@@ -37,6 +38,10 @@ const string PROJECTS_DIR = "projects";
 
 // every project found in the folder (filled by loadProjects)
 inline vector<Project> projects;
+
+inline string projectAssetUrl(const Project& p, const string& file) {
+    return p.webDir + "/" + file;
+}
 
 // file name -> safe page name: "Line Follower_Robot" -> "line-follower-robot"
 inline string makeSlug(const string& text) {
@@ -56,6 +61,7 @@ inline bool readProject(const filesystem::path& path, Project& p) {
     if (!parseTextFile(path.string(), t)) return false;
 
     p.fileName = path.filename().string();
+    p.webDir = "projects/" + path.parent_path().filename().string();
     p.slug = makeSlug(path.stem().string());
     if (p.slug.empty()) {
         cout << "  WARNING: " << p.fileName << " has no usable name, skipped" << endl;
@@ -86,8 +92,6 @@ inline bool readProject(const filesystem::path& path, Project& p) {
         if (parts[0].empty()) continue;
         p.photos.push_back({parts[0], toHtml(parts.size() > 1 && !parts[1].empty() ? parts[1] : p.title)});
     }
-    // no photo written: use the demo image, so the page never has a hole
-    if (p.photos.empty()) p.photos.push_back({DEMO_IMAGE, p.title});
     return true;
 }
 
@@ -97,12 +101,17 @@ inline bool loadProjects() {
     if (!filesystem::exists(PROJECTS_DIR)) return false;
 
     vector<filesystem::path> files;
-    for (const auto& entry : filesystem::directory_iterator(PROJECTS_DIR)) {
-        if (!entry.is_regular_file()) continue;
-        string name = entry.path().filename().string();
-        if (lowerText(entry.path().extension().string()) != ".txt") continue;
-        if (name.empty() || name[0] == '_' || name[0] == '.') continue;     // templates and hidden files
-        files.push_back(entry.path());
+    for (const auto& folder : filesystem::directory_iterator(PROJECTS_DIR)) {
+        if (!folder.is_directory()) continue;
+        string folderName = folder.path().filename().string();
+        if (folderName.empty() || folderName[0] == '_' || folderName[0] == '.') continue;
+        for (const auto& entry : filesystem::directory_iterator(folder.path())) {
+            if (!entry.is_regular_file()) continue;
+            string name = entry.path().filename().string();
+            if (lowerText(entry.path().extension().string()) == ".txt" && !name.empty() && name[0] != '.') {
+                files.push_back(entry.path());
+            }
+        }
     }
     sort(files.begin(), files.end());
 
