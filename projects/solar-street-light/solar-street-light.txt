@@ -1,6 +1,7 @@
 # Solar Street Light & Phone Charger  (page: project-solar-street-light.html)
 order: 3
 title: Solar Street Light & Phone Charger
+footer_title: Solar Lighting and Charging
 category: Renewable energy
 summary: A solar-powered street light with a phone charging point built from basic electronic components.
 image_note: Technical diagrams of the photovoltaic power path, charger and automatic lamp control. Component relationships are shown for clarity and are not a claim about a photographed prototype.

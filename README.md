@@ -32,7 +32,7 @@ Project imagery outside the FSMD gallery uses locally authored technical SVG dia
 | **One file for you** | Name, contact, skills, education, experience: all in [`about-me.txt`](about-me.txt). |
 | **One folder per project** | Drop a project folder into [`projects/`](projects) and the site grows by itself. |
 | **Self-updating numbers** | The "hands-on projects" number on the home page counts the project files. |
-| **Builds itself on GitHub** | Upload a file, and a GitHub Action rebuilds the pages for you. |
+| **Builds itself on GitHub** | Upload a file. A GitHub Action rebuilds the pages for you. |
 
 <br>
 
@@ -130,7 +130,7 @@ Open `index.html` in a browser. Changed only a text file (`about-me.txt` or a pr
 3. Put the project photos, schematics and outputs in that same project folder.
 4. Build again (or upload the file to GitHub).
 
-    That is all. The new project appears on the **Projects page**, on the **home page** (the first four), in the **footer**, gets its own **detail page** with previous/next links, and the **"hands-on projects" number goes up**. Delete a project file and its page disappears on the next build.
+    That is all. The new project appears on the **Projects page** and the **home page** (the first four). It also appears in the **footer** and gets its own **detail page** with previous/next links. The **"hands-on projects" number goes up**. Delete a project file and its page disappears on the next build.
 
 <details>
 <summary><b>What a project file looks like</b></summary>
@@ -170,7 +170,7 @@ line-robot-circuit.jpg | Circuit and connections
 
 The form sends a clean, tidy email (a table with name, email, subject and message) to the address in `about-me.txt`, using the free [FormSubmit](https://formsubmit.co) service. It needs no JavaScript.
 
-> **One-time setup:** send yourself the first test message from the live site. FormSubmit emails an **Activate** button to your address. Click it once, and every message after that arrives normally. Until then, messages wait and do not arrive.
+> **One-time setup:** send yourself the first test message from the live site. FormSubmit emails an **Activate** button to your address. Click it once. Every message after that arrives normally. Until then, messages wait and do not arrive.
 
 <br>
 
@@ -202,7 +202,7 @@ Fonts: **Outfit** for headings, **DM Sans** for text.
 <summary><b>Something not working?</b></summary>
 
 - **"cannot find the assets folder"**: run the program from the main folder, not from inside `ui` or `projects`.
-- **A project is missing**: check the file ends with `.txt`, does not start with `_`, and sits directly in `projects/`.
+- **A project is missing**: check the file ends with `.txt`, does not start with `_` and sits inside the correct project folder.
 - **A line is ignored in `about-me.txt`**: the build prints a `WARNING` with the line. Lists need the `|` sign between the parts.
 - **The project photo looks like the demo image**: put your real photo in `assets/` with the exact name written in the project file.
 - **The number on the home page did not change**: it changes on the next build. Run `./build_site`.

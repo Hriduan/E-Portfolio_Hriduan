@@ -3,6 +3,7 @@
 # Change it to 6 if you want it at the end of the list.
 order: 0
 title: Design, Synthesis and Comparative Analysis of a Custom FSMD Controller using ASIC and FPGA Technologies
+footer_title: ASIC and FPGA Controller
 category: ASIC & FPGA
 summary: A SystemVerilog FSMD controller explored through Cadence ASIC synthesis and Vivado FPGA implementation.
 

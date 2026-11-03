@@ -23,6 +23,7 @@ struct Project {
     string title;
     string category;
     string summary;             // short text on the project tile
+    string footerTitle;         // short label used only in the footer
     string imageNote;           // optional image provenance, shown on cards and detail pages
     vector<string> details;     // paragraphs on the project page
     vector<string> features;    // bullet list on the project page
@@ -71,6 +72,7 @@ inline bool readProject(const filesystem::path& path, Project& p) {
     p.title    = toHtml(t.get("title", path.stem().string()));
     p.category = toHtml(t.get("category", "Project"));
     p.summary  = toHtml(t.get("summary", ""));
+    p.footerTitle = toHtml(t.get("footer_title", p.title));
     p.imageNote = toHtml(t.get("image_note", ""));
     if (t.get("title").empty())   cout << "  WARNING: " << p.fileName << " has no title" << endl;
     if (t.get("summary").empty()) cout << "  WARNING: " << p.fileName << " has no summary" << endl;

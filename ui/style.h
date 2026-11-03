@@ -266,6 +266,11 @@ form textarea{min-height:150px;resize:vertical}
 .home-video-copy h2{margin:12px 0 8px;font-size:clamp(1.5rem,3vw,2.2rem)}
 .home-video-copy p{color:var(--muted)}
 .home-video video{width:100%;max-height:360px;border-radius:14px;background:#05040a;box-shadow:0 16px 40px rgba(0,0,0,.28)}
+.home-video-placeholder{background:linear-gradient(135deg,rgba(139,123,255,.12),rgba(255,255,255,.025))}
+.video-placeholder-mark{min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:1px dashed rgba(242,198,109,.45);border-radius:14px;background:rgba(7,6,13,.4);color:var(--muted)}
+.video-placeholder-mark strong{color:var(--text);font-family:var(--head);font-size:1.15rem}
+.video-placeholder-mark small{font-size:.85rem}
+.play-mark{display:grid;place-items:center;width:58px;height:58px;padding-left:4px;border:1px solid var(--gold);border-radius:50%;color:var(--gold);font-size:1.25rem;box-shadow:0 0 24px rgba(242,198,109,.16)}
 .video-card{display:flex;flex-direction:column;justify-content:center}
 .intro-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}
 .intro-state{color:var(--muted);font-size:.84rem}

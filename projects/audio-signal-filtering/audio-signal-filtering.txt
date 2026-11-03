@@ -1,6 +1,7 @@
 # Audio Signal Filtering  (page: project-audio-signal-filtering.html)
 order: 5
 title: Audio Signal Filtering
+footer_title: MATLAB Audio Signal Filtering
 category: Signal processing
 summary: I designed bandpass and low-pass filters in MATLAB to process and clean up audio signals.
 image_note: Recreated technical plots and block diagrams for the MATLAB workflow. They show the signal-processing method and expected filter behavior, not fabricated measurements from an unavailable dataset.

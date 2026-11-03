@@ -1,6 +1,7 @@
 # Ultrasound Sonar & RFID Access  (page: project-ultrasound-sonar-rfid.html)
 order: 4
 title: Ultrasound Sonar & RFID Access
+footer_title: Ultrasonic Sonar and RFID
 category: Arduino
 summary: An Arduino ultrasound sonar project paired with an RFID access control setup.
 image_note: Technical diagrams of the Arduino, ultrasonic timing, RFID and access-control signal paths. They explain the design without presenting conceptual artwork as physical evidence.

@@ -25,7 +25,9 @@ const string FOOTER_CENTER_TEXT = "E-PORTFOLIO";
 const string FOOTER_TOP_LABEL   = "Back to top";
 
 // small text under the logo (first column)
-string footerAboutText() { return FULL_NAME + " is a final-year EEE student at " + UNI_SHORT + " with an interest in VLSI and design verification. " + FOOTER_NOTE; }
+string footerAboutText() {
+    return FULL_NAME + ", Electrical &amp; Electronic Engineering student at " + UNI_SHORT + ". My projects connect embedded systems, automation and signal processing with a growing focus on chip design and RTL verification. I document design decisions, test ideas through simulation and practical work and use the results to guide the next improvement.";
+}
 
 // the bottom line, left side
 string footerCopyright() { return "&copy; " + YEAR + " " + FULL_NAME + ". All rights reserved."; }
@@ -49,7 +51,7 @@ string footerHtml() {
     // column 3: projects (every project of the projects folder)
     s += "<div>\n<h4>" + FOOTER_PROJECTS_TITLE + "</h4>\n<ul>\n";
     for (int i = 0; i < (int)projects.size(); i++) {
-        s += "<li><a class=\"footer-link\" href=\"project-" + projects[i].slug + ".html\">" + projects[i].title + "</a></li>\n";
+        s += "<li><a class=\"footer-link\" href=\"project-" + projects[i].slug + ".html\">" + projects[i].footerTitle + "</a></li>\n";
     }
     s += "</ul>\n</div>\n";
 

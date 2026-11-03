@@ -1,6 +1,7 @@
 # Digital Voting Machine  (page: project-digital-voting-machine.html)
 order: 1
 title: Digital Voting Machine
+footer_title: NID Verified Voting Machine
 category: Embedded system
 summary: I built an electronic voting machine that scans NID cards and checks voters automatically.
 image_note: Technical diagrams of the signal path, reader interface, control circuit and verification flow. They document the intended architecture rather than claim to be photographs of the prototype.

@@ -8,15 +8,16 @@
 #   4. Fill in the parts below and save.
 #   5. Build again (or upload to GitHub, it builds by itself).
 #  The new project shows up by itself on the Projects page, on the home page,
-#  in the footer, and the "hands-on projects" number on the home page goes up.
+#  in the footer. The "hands-on projects" number on the home page goes up.
 #
 #  Folders that start with an underscore (like this one) are ignored.
 #  Delete a project folder and its page disappears on the next build.
 # =====================================================================
 
-# order: 1 shows first, 2 second, and so on. Without a number it goes to the end.
+# order: 1 shows first, 2 second and so on. Without a number it goes to the end.
 order: 6
 title: My New Project
+footer_title: Short Footer Project Name
 category: Arduino
 summary: One short sentence for the project tile.
 

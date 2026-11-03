@@ -1,6 +1,7 @@
 # Smart Agriculture Model  (page: project-smart-agriculture-model.html)
 order: 2
 title: Smart Agriculture Model
+footer_title: Smart Farm Automation Model
 category: Automation
 summary: A small farm prototype that brings automatic irrigation together with a food dispenser and RFID access.
 image_note: Technical diagrams of the irrigation, feeder and RFID subsystems. They describe the electrical relationships without presenting conceptual artwork as physical evidence.

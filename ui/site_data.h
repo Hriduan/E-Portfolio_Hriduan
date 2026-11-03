@@ -87,7 +87,7 @@ inline string toHtml(const string& s) {
 //   key: value          lines at the top of the file
 //   [section name]      starts a list
 //   one item per line   inside a section
-//   # comment           ignored, and empty lines are ignored too
+//   # comment           ignored. Empty lines are ignored too.
 struct TextFile {
     map<string, string> keys;
     map<string, vector<string>> sections;
@@ -197,7 +197,7 @@ inline bool loadAboutMe(const string& path) {
     CV_FILE       = get("cv_file", "Hriduan_CV.pdf");
     while (!SITE_URL.empty() && SITE_URL.back() == '/') SITE_URL.pop_back();
 
-    // year: write a number, or "auto" to always use the year of the build
+    // year: write a number or "auto" to always use the year of the build
     string y = trim(t.get("year", "auto"));
     if (lowerText(y) == "auto") {
         time_t now = time(nullptr);

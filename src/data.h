@@ -115,7 +115,7 @@ const vector<Project> projects = {
         "A smart farm prototype with automatic irrigation, a food dispenser and a secure RFID entrance.",
         {
             "I designed and put together this smart farm prototype to show how automation can make farming easier.",
-            "It has three main parts: an automatic irrigation setup, a food dispenser, and an RFID card system that keeps the farm entrance secure."
+            "It has three main parts: an automatic irrigation setup, a food dispenser and an RFID card system that keeps the farm entrance secure."
         },
         {"Automatic irrigation setup", "Food dispenser", "RFID card system for the farm entrance"},
         {"Automation", "RFID", "Microcontroller"},

@@ -215,7 +215,7 @@ string experiencePage() {
 // ---------------------- CONTACT PAGE ----------------------
 string contactPage() {
     string s = startPage("Contact", "contact.html");
-    s += pageTitle("Contact me", "Send me a message, or find me on LinkedIn. You can also download my CV here.");
+    s += pageTitle("Contact me", "Send me a message or find me on LinkedIn. You can also download my CV here.");
 
     s += "<section class=\"wrap section\">\n<div class=\"contact\">\n<div class=\"reveal\">\n";
     s += "<a class=\"info-link\" href=\"mailto:" + EMAIL + "\"><span class=\"ico\">@</span><span><small>Email</small><strong>" + EMAIL + "</strong></span></a>\n";
