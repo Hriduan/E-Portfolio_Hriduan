@@ -35,8 +35,6 @@ string homePage() {
     if (introVideoAvailable()) {
         s += "<section class=\"wrap home-video reveal\"><div class=\"home-video-copy\"><span class=\"tag\">Personal introduction</span><h2>Hear the story behind the work</h2><p>A short introduction to my background, interests and direction.</p></div>";
         s += "<video controls playsinline preload=\"metadata\" poster=\"" + assetUrl(PROFILE_PHOTO) + "\" aria-label=\"Introduction video from " + FULL_NAME + "\"><source src=\"" + assetUrl("Hriduan_intro.mp4") + "\" type=\"video/mp4\"><p>Your browser does not support this video. <a href=\"" + assetUrl("Hriduan_intro.mp4") + "\">Download the introduction video</a>.</p></video></section>\n";
-    } else {
-        s += "<section class=\"wrap home-video home-video-placeholder reveal\"><div class=\"home-video-copy\"><span class=\"tag\">Personal introduction</span><h2>Video introduction</h2><p>Your introduction video will appear here after you add Hriduan_intro.mp4 to the assets folder.</p></div><div class=\"video-placeholder-mark\"><span class=\"play-mark\">&#9654;</span><strong>Ready for your video</strong><small>MP4 format recommended</small></div></section>\n";
     }
 
     // chip + numbers ({projects} becomes the real number of projects)
