@@ -265,7 +265,7 @@ form textarea{min-height:150px;resize:vertical}
 .home-video{display:grid;grid-template-columns:.75fr 1.25fr;gap:26px;align-items:center;margin-top:24px;padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(135deg,rgba(139,123,255,.12),rgba(242,198,109,.04))}
 .home-video-copy h2{margin:12px 0 8px;font-size:clamp(1.5rem,3vw,2.2rem)}
 .home-video-copy p{color:var(--muted)}
-.home-video video{width:100%;max-height:360px;border-radius:14px;background:#05040a;box-shadow:0 16px 40px rgba(0,0,0,.28)}
+.home-video video{width:100%;aspect-ratio:16/9;max-height:360px;border:1px solid var(--line);border-radius:14px;background:#05040a;object-fit:contain;box-shadow:0 16px 40px rgba(0,0,0,.28)}
 .home-video-placeholder{background:linear-gradient(135deg,rgba(139,123,255,.12),rgba(255,255,255,.025))}
 .video-placeholder-mark{min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:1px dashed rgba(242,198,109,.45);border-radius:14px;background:rgba(7,6,13,.4);color:var(--muted)}
 .video-placeholder-mark strong{color:var(--text);font-family:var(--head);font-size:1.15rem}

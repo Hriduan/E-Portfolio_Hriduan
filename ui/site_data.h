@@ -148,7 +148,9 @@ const string ASSETS_DIR = "assets";
 
 // web address of a file inside the assets folder, e.g. assetUrl("profile.jpg") -> "assets/profile.jpg"
 inline string assetUrl(const string& file) { return ASSETS_DIR + "/" + file; }
-inline bool introVideoAvailable() { return filesystem::exists(assetUrl("Hriduan_intro.mp4")); }
+inline bool introVideoAvailable() {
+    return filesystem::is_regular_file(assetUrl("Hriduan_intro.mp4"));
+}
 
 // phone number for a "tel:" link (only digits and the + sign)
 inline string telHref() {
