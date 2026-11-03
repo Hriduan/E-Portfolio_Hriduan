@@ -169,6 +169,7 @@ inline vector<Interest>   interests;
 inline vector<Education>  education;
 inline vector<Experience> experiences;
 inline vector<SkillGroup> skills;
+inline string COURSEWORK;
 
 // reads about-me.txt and fills everything above. Returns false if the file is missing.
 inline bool loadAboutMe(const string& path) {
@@ -238,6 +239,7 @@ inline bool loadAboutMe(const string& path) {
         experiences.push_back({toHtml(p[0]), toHtml(p[1]), toHtml(p[2])});
     }
 
+    COURSEWORK = toHtml(t.get("coursework"));
     skills.clear();
     for (const string& s : t.list("skills")) {
         vector<string> p = splitLimit(s, '|', 2);

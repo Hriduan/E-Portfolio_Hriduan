@@ -2,11 +2,13 @@
 order: 4
 title: Ultrasound Sonar & RFID Access
 category: Arduino
-summary: An Arduino based ultrasound sonar system combined with an RFID access and control mechanism.
+summary: An Arduino ultrasound sonar project paired with an RFID access control setup.
+image_note: AI-generated illustrative views based on the project description. These are not photographs of my actual build or evidence of its results.
 
 [details]
-In this project I developed an ultrasound sonar system using Arduino.
-I also connected it with an RFID access and control mechanism, so the same system can measure distance and control who gets access.
+I made an ultrasound sonar system with Arduino and connected it to an RFID access control setup. The project brought sensing and access control together in one build.
+Working on both parts helped me practise connecting electronic modules and thinking through how they should work as a system.
+
 
 [features]
 Ultrasound sonar built with Arduino
@@ -17,7 +19,8 @@ Both parts working in one system
 Arduino, Ultrasonic sensor, RFID
 
 [photos]
-sonar-rfid-main.jpg | Sonar and RFID system
-sonar-arduino-board.jpg | Arduino board setup
-sonar-ultrasonic-test.jpg | Ultrasonic sensor test
-sonar-rfid-access.jpg | RFID access control part
+sonar-rfid-main.jpg | AI illustration: Sonar and RFID concept
+sonar-arduino-board.jpg | AI illustration: Controller layout concept
+sonar-ultrasonic-test.jpg | AI illustration: Ultrasonic sensor concept
+sonar-rfid-access.jpg | AI illustration: Access-control concept
+

@@ -19,8 +19,8 @@
 # ---------- 1. BASIC INFO ----------
 site_name: Siam
 full_name: Hriduan Omor Siam
-role: Electrical & Electronic Engineering student
-tagline: I love building practical electronics projects that solve real-world problems.
+role: Final-year EEE student focused on VLSI and design verification
+tagline: I build electronics projects and explore digital design through SystemVerilog and hands-on ASIC and FPGA work.
 badge: Final-year EEE, AIUB
 email: hriduansiam101@gmail.com
 phone: +880 140 072 9346
@@ -29,7 +29,8 @@ location: Dhaka, Bangladesh
 university: American International University-Bangladesh (AIUB)
 university_short: AIUB
 field_short: EEE
-footer_note: Building practical electronics and learning chip design.
+coursework: Completed VLSI (mandatory) and ASIC Design (elective) at AIUB.
+footer_note: Learning by building circuits and working through digital designs.
 
 # the copyright year: write a number (like 2026) or "auto" to use the year of the build
 year: auto
@@ -45,16 +46,21 @@ cv_file: Hriduan_CV.pdf
 
 # ---------- 2. WORDS THAT CHANGE BY THEMSELVES ON THE HOME PAGE ----------
 [typing words]
-Electrical & Electronic Engineering student
-Chip design enthusiast
+Final-year EEE student at AIUB
+VLSI and digital design enthusiast
 RTL verification learner
 Electronics project builder
 
 
+
+
 # ---------- 3. ABOUT ME (one line = one paragraph) ----------
 [about]
-I am a final-year Electrical and Electronic Engineering student with a deep passion for electronics and automation. I love getting my hands dirty building practical projects that actually solve real-world problems.
-Whether it is designing a smart farming system or organizing student events, I always put my heart into what I do and try to learn something new every day.
+I am a final-year Electrical and Electronic Engineering student at AIUB with a CGPA of 3.87. My interest in VLSI grew as I started working with digital designs. I have completed the mandatory VLSI course and the elective ASIC Design course at my university.
+For my FSMD controller project I wrote the design in SystemVerilog and used Cadence tools for synthesis and timing-path simulation. Working through the design helped me see how RTL connects to an ASIC or FPGA implementation. I enjoy tracing unexpected behaviour back to its cause and want to build my career in the VLSI industry.
+I also led my group at VLSITHON 3.0. Alongside my coursework I build practical electronics projects and take part in engineering events. I learn best when I can try an idea myself and talk through what worked with the people around me.
+
+
 
 
 # ---------- 4. NUMBERS ON THE HOME PAGE ----------
@@ -69,19 +75,21 @@ Whether it is designing a smart farming system or organizing student events, I a
 # ---------- 5. INTERESTS ----------
 # format:  name | short text
 [interests]
-Semiconductor | How tiny devices made of silicon run the modern world.
-Chip Design | Turning an idea into a working digital chip.
-RTL Verification | Checking that the chip design behaves exactly as planned.
-PnR | Place and route: giving the design a real layout on silicon.
-PV Cells | Photovoltaic cells that turn sunlight into electricity.
-Nanotechnology | Working with materials at a very tiny scale.
-Perovskites | A fast-growing material for next generation solar cells.
+Semiconductor | I want to understand how semiconductor devices become the chips we use every day.
+Chip Design | I enjoy following a digital idea from the first logic decisions to its implementation.
+RTL Verification | I like checking a design against its intended behaviour and finding out why a result looks wrong.
+PnR | I am interested in how placement and routing turn a synthesized design into a physical layout.
+PV Cells | I enjoy exploring how photovoltaic cells turn sunlight into usable electrical power.
+Nanotechnology | I am curious about what changes when devices and materials become extremely small.
+Perovskites | I follow how perovskite materials could help improve future solar cells.
+
+
 
 
 # ---------- 6. EDUCATION ----------
 # format:  school | degree | place | result | year
 [education]
-American International University-Bangladesh (AIUB) | BSc in Electrical and Electronic Engineering (EEE) | Dhaka, Bangladesh | CGPA: 3.87 (9th semester completed) | Present
+American International University-Bangladesh (AIUB) | BSc in Electrical and Electronic Engineering (EEE) | Dhaka, Bangladesh | CGPA: 3.87 | Final Year
 Mymensingh Polytechnic Institute | Diploma in Electronics Engineering | Mymensingh, Bangladesh | CGPA: 3.18 | 2023
 Saint Andrews's High School | Secondary School Certificate (Science) | Haluaghat, Mymensingh | GPA: 4.55 | 2017
 
@@ -89,18 +97,22 @@ Saint Andrews's High School | Secondary School Certificate (Science) | Haluaghat
 # ---------- 7. LEADERSHIP & EXPERIENCE ----------
 # format:  tag | title | text
 [experience]
-Leadership | Hostel Leader | During my diploma, my teachers selected me to handle all the daily operations in the hostel. I took care of daily management and organized several events to keep our student community active and engaged.
-Competition | VLSITHON 3.0 Participant | Participated in VLSITHON 3.0 as a group leader. The event was organized by Ulkasemi.
-Competition | Poster Presentation Participant | Participated in the poster presentation competition as an author, organized by the Bangladesh Youth Nuclear Congress (BYNC), as part of I4N x INNOVENTURE Bangladesh 2026.
-Event | Semiconductor Symposium Attendee | Attended the National Semiconductor Symposium & BEAR Summit 2026.
-Visit | Industrial Tour | Attended an industrial tour to PGCB (Power Grid Company of Bangladesh), organized by my university.
-Learning | Continuous Learner | I regularly attend engineering seminars at my university to keep up with the latest industry trends and learn beyond my regular classroom syllabus.
+Competition | VLSITHON 3.0 Group Leader | I led my group at VLSITHON 3.0 organized by Ulkasemi. It gave me a chance to work with a team in a setting closely connected to my interest in VLSI.
+Event | Semiconductor Symposium Attendee | I attended the National Semiconductor Symposium & BEAR Summit 2026 to learn more about the semiconductor industry.
+Competition | Poster Presentation Participant | I presented a poster as an author at the Bangladesh Youth Nuclear Congress competition under I4N x INNOVENTURE Bangladesh 2026.
+Learning | Continuous Learner | I attend engineering seminars at my university to keep up with industry topics and explore ideas beyond our classroom lessons.
+Leadership | Student Representative | In the final year of my diploma my teachers chose me to look after the daily running of our hostel. I handled day-to-day management and organized events for the students.
+Visit | Industrial Tour | I joined a university-organized visit to PGCB (Power Grid Company of Bangladesh) for a closer look at an engineering workplace.
+
+
 
 
 # ---------- 8. SKILLS ----------
 # format:  group title | skill 1, skill 2, skill 3
 [skills]
-Technical Skills | Circuit design, Microcontrollers, RFID, Electronics engineering, Solar energy setups
-Programming Skills | C/C++ (Intermediate), MATLAB (Intermediate), System Verilog (Intermediate)
-Simulation Skills | Multisim, Cadence Virtuoso, Cadence Genus, Cadence Innovus, RealVNC
-Soft Skills | Paperwork and documentation, Organizing events, Leading teams, Communication
+Programming & HDL | SystemVerilog (Intermediate), C/C++ (Intermediate), MATLAB (Intermediate)
+Digital Design | Combinational and sequential logic, FSM and datapath design, RTL design for ASIC and FPGA
+EDA & Simulation Tools | Cadence Xcelium (simulation), Cadence Genus (synthesis), Cadence Innovus (place and route), Cadence Virtuoso, AMD Vivado Design Suite, RealVNC, Multisim, Tinkercad
+Hardware Skills | Circuit design, Microcontrollers, RFID, Solar energy setups
+Soft Skills | Teamwork and leadership, Clear communication, Documentation and paperwork, Event organizing
+

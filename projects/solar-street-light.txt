@@ -2,11 +2,13 @@
 order: 3
 title: Solar Street Light & Phone Charger
 category: Renewable energy
-summary: A solar-powered street light that also works as a mobile phone charging station.
+summary: A solar-powered street light with a phone charging point built from basic electronic components.
+image_note: AI-generated illustrative views based on the project description. These are not photographs of my actual build or evidence of its results.
 
 [details]
-For this project I used basic components like diodes and op-amps to create a functional street light powered by solar energy.
-The same setup also works as a convenient charging station for mobile phones.
+I built a solar-powered street light using basic components such as diodes and op-amps. I wanted to put my electronics knowledge to use in a simple renewable-energy project.
+The setup also includes a phone charging point. Combining lighting and charging in one prototype gave me a practical way to explore solar energy.
+
 
 [features]
 Powered by solar energy
@@ -17,7 +19,8 @@ Mobile phone charging point
 Solar energy, Diodes, Op-amps
 
 [photos]
-solar-light-main.jpg | Solar street light prototype
-solar-light-panel.jpg | Solar panel side
-solar-light-circuit.jpg | Diode and op-amp circuit
-solar-light-charger.jpg | Phone charging point
+solar-light-main.jpg | AI illustration: Solar-light concept
+solar-light-panel.jpg | AI illustration: Solar panel concept
+solar-light-circuit.jpg | AI illustration: Charging circuit concept
+solar-light-charger.jpg | AI illustration: Lighting and charging concept
+

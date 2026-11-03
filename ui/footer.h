@@ -25,7 +25,7 @@ const string FOOTER_CENTER_TEXT = "E-PORTFOLIO";
 const string FOOTER_TOP_LABEL   = "Back to top";
 
 // small text under the logo (first column)
-string footerAboutText() { return FULL_NAME + ", " + ROLE + " at " + UNI_SHORT + ". " + FOOTER_NOTE; }
+string footerAboutText() { return FULL_NAME + " is a final-year EEE student at " + UNI_SHORT + " with an interest in VLSI and design verification. " + FOOTER_NOTE; }
 
 // the bottom line, left side
 string footerCopyright() { return "&copy; " + YEAR + " " + FULL_NAME + ". All rights reserved."; }

@@ -1,16 +1,17 @@
-# Design, Synthesis, and Comparative Analysis of a Custom FSMD Controller  (page: project-fsmd-controller-asic-fpga.html)
+# Design, Synthesis and Comparative Analysis of a Custom FSMD Controller  (page: project-fsmd-controller-asic-fpga.html)
 # order 0 = shown first (it becomes the first featured project on the home page).
 # Change it to 6 if you want it at the end of the list.
 order: 0
-title: Design, Synthesis, and Comparative Analysis of a Custom FSMD Controller using ASIC and FPGA Technologies
+title: Design, Synthesis and Comparative Analysis of a Custom FSMD Controller using ASIC and FPGA Technologies
 category: ASIC & FPGA
-summary: A custom FSMD multiplier controller taken through Cadence ASIC synthesis and Vivado FPGA implementation, then compared on area, timing and power.
+summary: A SystemVerilog FSMD controller explored through Cadence ASIC synthesis and Vivado FPGA implementation.
 
 [details]
-This is my most recent project and it matches my interests in chip design perfectly. I designed a custom FSMD (finite state machine with datapath) controller, a multiplier that takes two 4-bit inputs and gives an 8-bit result. I checked it in simulation first: the SimVision waveform shows the output reaching 225 when both inputs are 15.
-Then I took the same design through two different technologies. For the ASIC side, I synthesized it with Cadence Genus. The report shows 117 cells, a cell area of 295.488, and the setup timing was met with 6793 ps of slack on a 10 ns clock. The total power was about 10.45 uW, mostly from the registers (74%) and the logic (22%). I also worked with the Innovus place and route scripts (init, place, CTS, route and signoff).
-For the FPGA side, I used Vivado 2020.2 on an Artix-7 part (xc7a100tcsg324-1). Synthesis finished with no errors or warnings, and the design is very small: 23 LUTs, 26 flip-flops and 18 IOs after implementation. Timing was met after synthesis, but after implementation the worst negative slack was -1.592 ns with 8 failing endpoints out of 80. The total on-chip power was 0.092 W, and almost all of it (99%) is the static power of the device.
-Putting the two sets of reports side by side helped me understand how the same RTL design behaves in an ASIC flow and in an FPGA flow, and how to read area, timing and power reports in both.
+I wrote a custom FSMD controller in SystemVerilog with a datapath that multiplies two 4-bit inputs and returns an 8-bit result. I started by checking its behaviour in simulation. In the SimVision waveform both inputs are 15 and the output reaches 225.
+I then took the design through an ASIC flow using Cadence Genus. The report lists 117 cells and a cell area of 295.488. Setup timing was met with 6793 ps of slack on a 10 ns clock. Total power was about 10.45 uW with registers accounting for 74% and logic for 22%. I also worked with the Innovus scripts for initialization, placement, clock tree synthesis, routing and signoff.
+For the FPGA implementation I used Vivado 2020.2 with an Artix-7 device (xc7a100tcsg324-1). Synthesis completed without errors or warnings. The implemented design used 23 LUTs, 26 flip-flops and 18 IOs. Timing passed after synthesis but failed after implementation: the worst negative slack was -1.592 ns with 8 failing endpoints out of 80. Total on-chip power was 0.092 W of which about 99% was device static power.
+Comparing the reports helped me understand how the same RTL design behaves in ASIC and FPGA flows. It also gave me practice reading area, timing and power results without overlooking a limitation such as the FPGA implementation timing failure.
+
 
 [features]
 Custom FSMD controller with a 4-bit x 4-bit multiplier datapath
@@ -23,7 +24,7 @@ FPGA result: 23 LUTs, 26 flip-flops, 0.092 W, timing not met after implementatio
 Side-by-side comparison of area, timing and power for ASIC and FPGA
 
 [tools]
-Cadence Genus, Cadence Innovus, Cadence SimVision, Vivado 2020.2, RTL design, ASIC flow, FPGA flow
+SystemVerilog, Cadence Xcelium, Cadence Genus, Cadence Innovus, Cadence SimVision, Vivado 2020.2, RTL design, ASIC flow, FPGA flow
 
 [photos]
 fsmd-fpga-layout.jpg | FPGA layout and timing summary in Vivado

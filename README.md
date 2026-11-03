@@ -17,6 +17,12 @@
 
 <br>
 
+## Phone updates and current content
+
+See [TERMUX.md](TERMUX.md) for the phone setup and update commands. The portfolio now uses the supplied VLSI and Design Verification CV. Completed VLSI and ASIC Design courses are included in the education card. Long project and About paragraphs use justified alignment on wider screens with left alignment on phones.
+
+Project imagery outside the FSMD gallery is AI-generated and visibly labeled. See [IMAGE_PROVENANCE.md](IMAGE_PROVENANCE.md). It is illustrative rather than evidence of actual builds.
+
 ## `01` &nbsp; What makes it different
 
 | | |

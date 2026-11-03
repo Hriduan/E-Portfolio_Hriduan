@@ -2,11 +2,13 @@
 order: 2
 title: Smart Agriculture Model
 category: Automation
-summary: A smart farm prototype with automatic irrigation, a food dispenser and a secure RFID entrance.
+summary: A small farm prototype that brings automatic irrigation together with a food dispenser and RFID access.
+image_note: AI-generated illustrative views based on the project description. These are not photographs of my actual build or evidence of its results.
 
 [details]
-I designed and put together this smart farm prototype to show how automation can make farming easier.
-It has three main parts: an automatic irrigation setup, a food dispenser, and an RFID card system that keeps the farm entrance secure.
+I put together this small farm model to explore a few everyday uses of automation. It combines an automatic irrigation setup with a food dispenser in one prototype.
+I also added an RFID card system at the entrance to control access. Building the model let me bring these separate functions together in a practical setup.
+
 
 [features]
 Automatic irrigation setup
@@ -17,7 +19,8 @@ RFID card system for the farm entrance
 Automation, RFID, Microcontroller
 
 [photos]
-smart-farm-model.jpg | The complete smart farm model
-smart-farm-irrigation.jpg | Automatic irrigation part
-smart-farm-dispenser.jpg | Food dispenser part
-smart-farm-rfid-gate.jpg | RFID card entrance
+smart-farm-model.jpg | AI illustration: Smart-farm concept
+smart-farm-irrigation.jpg | AI illustration: Irrigation concept
+smart-farm-dispenser.jpg | AI illustration: Dispenser and gate concept
+smart-farm-rfid-gate.jpg | AI illustration: Farm access concept
+

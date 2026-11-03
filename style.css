@@ -287,6 +287,16 @@ form textarea{min-height:150px;resize:vertical}
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
   .reveal{animation:none}
   #loader{display:none}
+  .rotator span{animation:none !important;opacity:1;display:none;transform:none}
+  .rotator span:first-child{display:block}
+}
+
+/* Readable long-form text and image provenance; original brand tokens preserved. */
+.coursework{margin-top:16px;color:var(--muted)}
+.image-note{font-size:.875rem;line-height:1.6;color:var(--muted);margin:12px 0 18px;text-align:left}
+.tile-body .image-note{margin:10px 0 0;font-size:.875rem}
+@media(min-width:768px){
+  .about .reveal > p,.text-block > p{text-align:justify;text-justify:inter-word;hyphens:auto}
 }
 
 @keyframes wordShow{

@@ -1,2 +1,4 @@
 build_site
 build_site.exe
+.build/
+__pycache__/

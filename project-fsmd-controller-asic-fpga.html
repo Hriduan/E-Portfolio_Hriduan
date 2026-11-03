@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Design, Synthesis, and Comparative Analysis of a Custom FSMD Controller using ASIC and FPGA Technologies | Hriduan Omor Siam</title>
-<meta name="description" content="E-portfolio of Hriduan Omor Siam, Electrical &amp; Electronic Engineering student at AIUB.">
+<title>Design, Synthesis and Comparative Analysis of a Custom FSMD Controller using ASIC and FPGA Technologies | Hriduan Omor Siam</title>
+<meta name="description" content="E-portfolio of Hriduan Omor Siam, Final-year EEE student focused on VLSI and design verification at AIUB.">
 <meta name="theme-color" content="#07060d">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='7' y='7' width='18' height='18' rx='4' fill='%238b7bff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,8 +33,8 @@
 <main>
 <section class="wrap page-hero">
 <a class="crumb" href="projects.html">&larr; Back to all projects</a>
-<h1>Design, Synthesis, and Comparative Analysis of a Custom FSMD Controller using ASIC and FPGA Technologies</h1>
-<p>A custom FSMD multiplier controller taken through Cadence ASIC synthesis and Vivado FPGA implementation, then compared on area, timing and power.</p>
+<h1>Design, Synthesis and Comparative Analysis of a Custom FSMD Controller using ASIC and FPGA Technologies</h1>
+<p>A SystemVerilog FSMD controller explored through Cadence ASIC synthesis and Vivado FPGA implementation.</p>
 </section>
 <section class="wrap section">
 <div class="detail">
@@ -59,10 +59,10 @@
 <a class="lightbox" id="pic-7" href="#gallery"><div><img src="assets/fsmd-pnr-scripts.jpg" alt=""><p>Innovus place and route scripts</p></div></a>
 <div class="text-block">
 <h2>About this project</h2>
-<p>This is my most recent project and it matches my interests in chip design perfectly. I designed a custom FSMD (finite state machine with datapath) controller, a multiplier that takes two 4-bit inputs and gives an 8-bit result. I checked it in simulation first: the SimVision waveform shows the output reaching 225 when both inputs are 15.</p>
-<p>Then I took the same design through two different technologies. For the ASIC side, I synthesized it with Cadence Genus. The report shows 117 cells, a cell area of 295.488, and the setup timing was met with 6793 ps of slack on a 10 ns clock. The total power was about 10.45 uW, mostly from the registers (74%) and the logic (22%). I also worked with the Innovus place and route scripts (init, place, CTS, route and signoff).</p>
-<p>For the FPGA side, I used Vivado 2020.2 on an Artix-7 part (xc7a100tcsg324-1). Synthesis finished with no errors or warnings, and the design is very small: 23 LUTs, 26 flip-flops and 18 IOs after implementation. Timing was met after synthesis, but after implementation the worst negative slack was -1.592 ns with 8 failing endpoints out of 80. The total on-chip power was 0.092 W, and almost all of it (99%) is the static power of the device.</p>
-<p>Putting the two sets of reports side by side helped me understand how the same RTL design behaves in an ASIC flow and in an FPGA flow, and how to read area, timing and power reports in both.</p>
+<p>I wrote a custom FSMD controller in SystemVerilog with a datapath that multiplies two 4-bit inputs and returns an 8-bit result. I started by checking its behaviour in simulation. In the SimVision waveform both inputs are 15 and the output reaches 225.</p>
+<p>I then took the design through an ASIC flow using Cadence Genus. The report lists 117 cells and a cell area of 295.488. Setup timing was met with 6793 ps of slack on a 10 ns clock. Total power was about 10.45 uW with registers accounting for 74% and logic for 22%. I also worked with the Innovus scripts for initialization, placement, clock tree synthesis, routing and signoff.</p>
+<p>For the FPGA implementation I used Vivado 2020.2 with an Artix-7 device (xc7a100tcsg324-1). Synthesis completed without errors or warnings. The implemented design used 23 LUTs, 26 flip-flops and 18 IOs. Timing passed after synthesis but failed after implementation: the worst negative slack was -1.592 ns with 8 failing endpoints out of 80. Total on-chip power was 0.092 W of which about 99% was device static power.</p>
+<p>Comparing the reports helped me understand how the same RTL design behaves in ASIC and FPGA flows. It also gave me practice reading area, timing and power results without overlooking a limitation such as the FPGA implementation timing failure.</p>
 <h2>What it does</h2>
 <ul class="check">
 <li>Custom FSMD controller with a 4-bit x 4-bit multiplier datapath</li>
@@ -80,7 +80,7 @@
 <h3>Type</h3>
 <div class="tags"><span class="tag">ASIC &amp; FPGA</span></div>
 <h3>Tools and topics</h3>
-<div class="tags"><span class="tag">Cadence Genus</span><span class="tag">Cadence Innovus</span><span class="tag">Cadence SimVision</span><span class="tag">Vivado 2020.2</span><span class="tag">RTL design</span><span class="tag">ASIC flow</span><span class="tag">FPGA flow</span></div>
+<div class="tags"><span class="tag">SystemVerilog</span><span class="tag">Cadence Xcelium</span><span class="tag">Cadence Genus</span><span class="tag">Cadence Innovus</span><span class="tag">Cadence SimVision</span><span class="tag">Vivado 2020.2</span><span class="tag">RTL design</span><span class="tag">ASIC flow</span><span class="tag">FPGA flow</span></div>
 <h3>Made by</h3>
 <p>Hriduan Omor Siam</p>
 </aside>
@@ -96,7 +96,7 @@
 <div class="footer-top">
 <div>
 <a class="logo" href="index.html"><span class="logo-mark"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect x="8" y="8" width="16" height="16" rx="3" fill="rgba(139,123,255,.2)" stroke="#8b7bff" stroke-width="2"/><path d="M12 3v5M16 3v5M20 3v5M12 24v5M16 24v5M20 24v5M3 12h5M3 16h5M3 20h5M24 12h5M24 16h5M24 20h5" stroke="#f2c66d" stroke-width="2" stroke-linecap="round"/></svg></span>Siam</a>
-<p>Hriduan Omor Siam, Electrical &amp; Electronic Engineering student at AIUB. Building practical electronics and learning chip design.</p>
+<p>Hriduan Omor Siam is a final-year EEE student at AIUB with an interest in VLSI and design verification. Learning by building circuits and working through digital designs.</p>
 </div>
 <div>
 <h4>Pages</h4>
@@ -111,7 +111,7 @@
 <div>
 <h4>Projects</h4>
 <ul>
-<li><a href="project-fsmd-controller-asic-fpga.html">Design, Synthesis, and Comparative Analysis of a Custom FSMD Controller using ASIC and FPGA Technologies</a></li>
+<li><a href="project-fsmd-controller-asic-fpga.html">Design, Synthesis and Comparative Analysis of a Custom FSMD Controller using ASIC and FPGA Technologies</a></li>
 <li><a href="project-digital-voting-machine.html">Digital Voting Machine</a></li>
 <li><a href="project-smart-agriculture-model.html">Smart Agriculture Model</a></li>
 <li><a href="project-solar-street-light.html">Solar Street Light &amp; Phone Charger</a></li>

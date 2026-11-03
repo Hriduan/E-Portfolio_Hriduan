@@ -1,38 +1,109 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# Works with Bash on Termux and desktop Linux. Run with: bash update help
+set -euo pipefail
+cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
 
-# 1. Check if there are actually any changes to upload
-if [ -z "$(git status --porcelain)" ]; then
-    echo "No new changes detected. Website is already up to date."
-    exit 0
-fi
+usage() {
+    cat <<'HELP'
+Portfolio commands (run from this folder):
+  bash update build                 Rebuild the site with g++ or clang++
+  bash update check                 Build and check local links and images
+  bash update preview [port]        Build and serve at http://127.0.0.1:8080
+  bash update push ["message"]       Build then commit and push this branch
+  bash update                       Same as push
+  bash update help                  Show this help
 
-# 2. Stage all additions, updates, and deletions
-git add --all
+Termux setup: pkg install git clang python
+Keep the repository in $HOME rather than /sdcard.
+Git authentication and user identity must already be configured for push.
+No password or token belongs in this file or in your website.
+HELP
+}
 
-# 3. Find the highest existing version tag (sorts mathematically)
-latest_tag=$(git tag | sort -V | tail -n 1)
+build() {
+    local compiler
+    if command -v g++ >/dev/null 2>&1; then compiler=g++
+    elif command -v clang++ >/dev/null 2>&1; then compiler=clang++
+    else echo 'Install a compiler first: pkg install clang' >&2; return 1; fi
+    mkdir -p .build
+    "$compiler" -std=c++17 main.cpp -o .build/build_site
+    ./.build/build_site
+}
 
-# 4. Calculate the next mathematical sequence
-if [ -z "$latest_tag" ]; then
-    new_tag="v1.0"
-else
-    # Split "v1.12" into major (1) and minor (12)
-    major=$(echo $latest_tag | sed 's/v//' | cut -d. -f1)
-    minor=$(echo $latest_tag | cut -d. -f2)
-    
-    # Add 1 to the minor version
-    new_minor=$((minor + 1))
-    new_tag="v${major}.${new_minor}"
-fi
+check() {
+    command -v python3 >/dev/null 2>&1 || { echo 'Install Python first: pkg install python' >&2; return 1; }
+    python3 tools/check_site.py
+}
 
-# 5. Commit using ONLY the version number as the message
-git commit -m "$new_tag"
+push_changes() {
+    git rev-parse --is-inside-work-tree >/dev/null 2>&1 || {
+        echo 'This folder is not a Git checkout. Clone your existing repository first. See TERMUX.md.' >&2; return 1;
+    }
+    local branch remote upstream remote_branch latest_tag new_tag major minor message
+    branch=$(git symbolic-ref --quiet --short HEAD) || { echo 'Switch to a branch before pushing.' >&2; return 1; }
+    if git rev-parse -q --verify MERGE_HEAD >/dev/null || [ -d "$(git rev-parse --git-path rebase-merge)" ] || [ -d "$(git rev-parse --git-path rebase-apply)" ]; then
+        echo 'Finish your merge or rebase before using this helper.' >&2; return 1
+    fi
+    if [ -n "$(git ls-files -u)" ]; then echo 'Resolve conflicted files first.' >&2; return 1; fi
+    remote=$(git config --get "branch.$branch.remote" || true)
+    [ -n "$remote" ] || remote=origin
+    [ "$remote" != . ] || { echo 'Use a branch with an external remote.' >&2; return 1; }
+    git remote get-url "$remote" >/dev/null 2>&1 || { echo 'No remote is configured. See TERMUX.md.' >&2; return 1; }
+    upstream=$(git config --get "branch.$branch.merge" || true)
+    remote_branch=${upstream#refs/heads/}
+    [ -n "$remote_branch" ] || remote_branch=$branch
+    git var GIT_AUTHOR_IDENT >/dev/null
+    git var GIT_COMMITTER_IDENT >/dev/null
+    # Fetch without changing your files. Never force-push or auto-resolve a conflict.
+    git fetch "$remote" --tags
+    if git show-ref --verify --quiet "refs/remotes/$remote/$remote_branch"; then
+        git merge-base --is-ancestor "refs/remotes/$remote/$remote_branch" HEAD || {
+            echo 'Remote changes are waiting. Commit or stash your work then run git pull --rebase and review it before retrying.' >&2; return 1;
+        }
+    fi
+    build
+    check
+    # Preserve the original vMAJOR.MINOR sequence while ignoring unrelated tags.
+    new_tag=''
+    if [ -n "$(git status --porcelain)" ]; then
+        latest_tag=$(git tag --list | grep -E '^v[0-9]+\.[0-9]+$' | sort -V | tail -n 1 || true)
+        if [ -z "$latest_tag" ]; then new_tag=v1.0
+        else
+            major=${latest_tag#v}; major=${major%%.*}
+            minor=${latest_tag##*.}
+            new_tag="v${major}.$((10#$minor + 1))"
+        fi
+        message=${1:-$new_tag}
+        git add --all
+        git commit -m "$message"
+        git tag "$new_tag"
+    else
+        echo 'No file changes. Checking for any local commits that still need pushing.'
+    fi
+    # Atomic push prevents a version tag being published without its commit.
+    local -a refs=("HEAD:refs/heads/$remote_branch")
+    # Includes an unpushed version tag from a previously interrupted attempt.
+    while IFS= read -r tag; do
+        if ! git ls-remote --exit-code --tags "$remote" "refs/tags/$tag" >/dev/null 2>&1; then
+            refs+=("refs/tags/$tag:refs/tags/$tag")
+        fi
+    done < <(git tag --points-at HEAD | grep -E '^v[0-9]+\.[0-9]+$' || true)
+    git push --atomic -u "$remote" "${refs[@]}"
+    echo "Pushed $branch to $remote/$remote_branch. Check GitHub Actions and Pages for the deployment result."
+}
 
-# 6. Create the Git tag for the exact version
-git tag $new_tag
-
-# 7. Push the files and the new version tag to GitHub
-git push origin main
-git push origin $new_tag
-
-echo "Success! Update batch $new_tag has been sequenced and pushed."
+case "${1:-push}" in
+    help|-h|--help) usage ;;
+    build) build ;;
+    check) build; check ;;
+    preview)
+        port=${2:-8080}
+        [[ "$port" =~ ^[0-9]{1,5}$ ]] && (( 10#$port >= 1024 && 10#$port <= 65535 )) || { echo 'Choose a port from 1024 to 65535.' >&2; exit 1; }
+        port=$((10#$port))
+        build; check
+        echo "Open http://127.0.0.1:$port in your phone browser. Press Ctrl+C to stop."
+        python3 -m http.server "$port" --bind 127.0.0.1
+        ;;
+    push) shift || true; push_changes "$@" ;;
+    *) echo 'Unknown command. Run: bash update help' >&2; exit 1 ;;
+esac

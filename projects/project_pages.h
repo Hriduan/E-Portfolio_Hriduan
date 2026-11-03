@@ -18,6 +18,7 @@ string projectTile(const Project& p) {
     s += "<div class=\"tile-img\"><img src=\"" + assetUrl(p.photos[0].file) + "\" alt=\"" + p.title + "\" loading=\"lazy\">";
     s += "<span class=\"tile-cat\">" + p.category + "</span></div>\n";
     s += "<div class=\"tile-body\"><h3>" + p.title + "</h3><p>" + p.summary + "</p>";
+    if (!p.imageNote.empty()) s += "<p class=\"image-note\">AI-generated illustration</p>";
     s += "<span class=\"more\">View details <b>&rarr;</b></span></div>\n</a>\n";
     return s;
 }
@@ -25,7 +26,7 @@ string projectTile(const Project& p) {
 // ---------------------- PROJECTS PAGE ----------------------
 string projectsPage() {
     string s = startPage("Projects", "projects.html");
-    s += pageTitle("My projects", "Things I built with my own hands. Click on a project to see photos and details.");
+    s += pageTitle("My projects", "Explore my electronics and digital design work. Each project includes a short account of what I built and learned.");
     s += "<section class=\"wrap section\">\n<div class=\"projects-grid\">\n";
     for (int i = 0; i < (int)projects.size(); i++) {
         s += projectTile(projects[i]);
@@ -48,6 +49,7 @@ string projectPage(int i) {
     s += "<section class=\"wrap section\">\n<div class=\"detail\">\n<div>\n";
 
     // photos
+    if (!p.imageNote.empty()) s += "<p class=\"image-note\">" + p.imageNote + "</p>\n";
     s += "<div class=\"gallery\" id=\"gallery\">\n";
     for (int k = 0; k < (int)p.photos.size(); k++) {
         s += "<figure class=\"reveal\"><a href=\"#pic-" + to_string(k) + "\"><img src=\"" + assetUrl(p.photos[k].file) + "\" alt=\"" + p.photos[k].caption + "\" loading=\"lazy\">";

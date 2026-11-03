@@ -2,11 +2,13 @@
 order: 5
 title: Audio Signal Filtering
 category: Signal processing
-summary: Bandpass and low pass filters designed in MATLAB to process and filter audio signals.
+summary: I designed bandpass and low-pass filters in MATLAB to process and clean up audio signals.
+image_note: AI-generated illustrative views based on the project description. These are not photographs of my actual build or evidence of its results. This project was completed in MATLAB. The workspace scenes are conceptual and do not show my actual code or results.
 
 [details]
-This project is about processing audio signals. I designed bandpass and low pass filters using MATLAB and used them to filter the audio.
-It helped me understand how filters work on real signals and not only on paper.
+I used MATLAB to design bandpass and low-pass filters for audio signals. The project gave me a way to apply filter design beyond the equations we study in class.
+Working with audio helped me connect the purpose of each filter to the signal it was processing. This was a MATLAB-based project rather than a physical filter-circuit build.
+
 
 [features]
 Bandpass filter design
@@ -17,7 +19,7 @@ Audio signal processing in MATLAB
 MATLAB, Filter design, Signal processing
 
 [photos]
-audio-filter-main.jpg | Audio filtering project
-audio-filter-bandpass.jpg | Bandpass filter result
-audio-filter-lowpass.jpg | Low pass filter result
-audio-filter-matlab.jpg | MATLAB code and output
+audio-filter-main.jpg | AI illustration: Audio-analysis workspace concept
+audio-filter-bandpass.jpg | AI illustration: Waveform study concept, not measured output
+audio-filter-lowpass.jpg | AI illustration: Software filtering workspace concept
+audio-filter-matlab.jpg | AI illustration: MATLAB study workspace concept, not my code
