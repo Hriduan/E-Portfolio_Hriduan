@@ -33,7 +33,7 @@ string homePage() {
     s += "<div class=\"photo-badge\">" + BADGE + "</div></div>\n</section>\n";
 
     if (introVideoAvailable()) {
-        s += "<section class=\"wrap home-video reveal\"><div class=\"home-video-copy\"><span class=\"tag\">A short note from me</span><h2>Why I enjoy building things</h2><p>Hi, I am Hriduan. In this short introduction I share where I am coming from, what I am learning in EEE and why I enjoy turning ideas into working systems.</p></div>";
+        s += "<section class=\"wrap home-video reveal\"><div class=\"home-video-copy\"><span class=\"chip-label video-chip-label\">Professional introduction</span><p>Hi, I am Hriduan. In this short introduction I share where I am coming from, what I am learning in EEE and why I enjoy turning ideas into working systems.</p></div>";
         s += "<video controls playsinline preload=\"metadata\" poster=\"" + assetUrl(PROFILE_PHOTO) + "\" aria-label=\"Introduction video from " + FULL_NAME + "\"><source src=\"" + assetUrl("Hriduan_intro.mp4") + "\" type=\"video/mp4\"><p>Your browser does not support this video. <a href=\"" + assetUrl("Hriduan_intro.mp4") + "\">Download the introduction video</a>.</p></video></section>\n";
     }
 
