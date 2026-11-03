@@ -3,7 +3,7 @@ order: 1
 title: Digital Voting Machine
 category: Embedded system
 summary: I built an electronic voting machine that scans NID cards and checks voters automatically.
-image_note: AI-generated illustrative views based on the project description. These are not photographs of my actual build or evidence of its results.
+image_note: Technical diagrams of the signal path, reader interface, control circuit and verification flow. They document the intended architecture rather than claim to be photographs of the prototype.
 
 [details]
 I wanted to explore how electronics could make voter checks more consistent. For this project I built a voting machine that scans a voter's NID card and verifies the person automatically.
@@ -19,8 +19,8 @@ Made for a secure and reliable voting process
 Electronics, Microcontroller, NID card scanning
 
 [photos]
-voting-machine-main.jpg | AI illustration: Voting-machine concept
-voting-machine-scanner.jpg | AI illustration: Card-reader concept
-voting-machine-circuit.jpg | AI illustration: Circuit layout concept
-voting-machine-testing.jpg | AI illustration: Prototype layout concept
+voting-machine-main-schematic.svg | NID reader, controller, display and vote input schematic
+voting-machine-scanner-schematic.svg | Card reader interface and MCU signal wiring
+voting-machine-circuit-schematic.svg | Vote input, indicator and common-ground circuit
+voting-machine-testing-waveform.svg | Card validation and vote-enable timing output
 

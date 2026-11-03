@@ -3,7 +3,7 @@ order: 2
 title: Smart Agriculture Model
 category: Automation
 summary: A small farm prototype that brings automatic irrigation together with a food dispenser and RFID access.
-image_note: AI-generated illustrative views based on the project description. These are not photographs of my actual build or evidence of its results.
+image_note: Technical diagrams of the irrigation, feeder and RFID subsystems. They describe the electrical relationships without presenting conceptual artwork as physical evidence.
 
 [details]
 I put together this small farm model to explore a few everyday uses of automation. It combines an automatic irrigation setup with a food dispenser in one prototype.
@@ -19,8 +19,8 @@ RFID card system for the farm entrance
 Automation, RFID, Microcontroller
 
 [photos]
-smart-farm-model.jpg | AI illustration: Smart-farm concept
-smart-farm-irrigation.jpg | AI illustration: Irrigation concept
-smart-farm-dispenser.jpg | AI illustration: Dispenser and gate concept
-smart-farm-rfid-gate.jpg | AI illustration: Farm access concept
+smart-farm-main-schematic.svg | Smart-farm controller and subsystem schematic
+smart-farm-irrigation-circuit.svg | Soil probe comparator and pump driver circuit
+smart-farm-dispenser-circuit.svg | Dispenser motor driver circuit
+smart-farm-rfid-gate-circuit.svg | RFID gate control circuit
 

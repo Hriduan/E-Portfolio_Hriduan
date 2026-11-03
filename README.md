@@ -21,7 +21,7 @@
 
 See [TERMUX.md](TERMUX.md) for the phone setup and update commands. The portfolio now uses the supplied VLSI and Design Verification CV. Completed VLSI and ASIC Design courses are included in the education card. Long project and About paragraphs use justified alignment on wider screens with left alignment on phones.
 
-Project imagery outside the FSMD gallery is AI-generated and visibly labeled. See [IMAGE_PROVENANCE.md](IMAGE_PROVENANCE.md). It is illustrative rather than evidence of actual builds.
+Project imagery outside the FSMD gallery uses locally authored technical SVG diagrams and is visibly labeled. See [IMAGE_PROVENANCE.md](IMAGE_PROVENANCE.md). It explains architecture and analysis rather than serving as evidence of actual builds.
 
 ## `01` &nbsp; What makes it different
 
@@ -63,7 +63,7 @@ E-Portfolio_Hriduan/
 ├── main.cpp                 ← run this: it builds the whole website
 ├── about-me.txt             ← ALL information about me (edit here)
 ├── index.html               ← the pages made by the program
-├── about.html · projects.html · experience.html · contact.html
+├── about.html · projects.html · resume.html · experience.html · video-introduction.html · contact.html
 ├── project-<name>.html      ← one page per project (made by the program)
 ├── style.css                ← the design (made by the program)
 ├── README.md                ← you are here
@@ -129,7 +129,7 @@ Open `index.html` in a browser. Changed only a text file (`about-me.txt` or a pr
 3. Put the real photos in `assets/` with the same names you wrote in the file.
 4. Build again (or upload the file to GitHub).
 
-That is all. The new project appears on the **Projects page**, on the **home page** (first three), in the **footer**, gets its own **detail page** with previous/next links, and the **"hands-on projects" number goes up**. Delete a project file and its page disappears on the next build.
+    That is all. The new project appears on the **Projects page**, on the **home page** (the first four), in the **footer**, gets its own **detail page** with previous/next links, and the **"hands-on projects" number goes up**. Delete a project file and its page disappears on the next build.
 
 <details>
 <summary><b>What a project file looks like</b></summary>

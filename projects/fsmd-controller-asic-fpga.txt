@@ -34,4 +34,3 @@ fsmd-vivado-schematic.jpg | Synthesized schematic in Vivado
 fsmd-genus-area-power.jpg | ASIC area and power reports
 fsmd-genus-timing.jpg | ASIC setup timing report
 fsmd-vivado-utilization.jpg | FPGA utilization and power in Vivado
-fsmd-pnr-scripts.jpg | Innovus place and route scripts

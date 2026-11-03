@@ -18,7 +18,7 @@ string projectTile(const Project& p) {
     s += "<div class=\"tile-img\"><img src=\"" + assetUrl(p.photos[0].file) + "\" alt=\"" + p.title + "\" loading=\"lazy\">";
     s += "<span class=\"tile-cat\">" + p.category + "</span></div>\n";
     s += "<div class=\"tile-body\"><h3>" + p.title + "</h3><p>" + p.summary + "</p>";
-    if (!p.imageNote.empty()) s += "<p class=\"image-note\">AI-generated illustration</p>";
+    if (!p.imageNote.empty()) s += "<p class=\"image-note\">" + p.imageNote + "</p>";
     s += "<span class=\"more\">View details <b>&rarr;</b></span></div>\n</a>\n";
     return s;
 }

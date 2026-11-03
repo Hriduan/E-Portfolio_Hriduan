@@ -36,29 +36,30 @@ string footerHtml() {
     string s = "</main>\n<footer class=\"footer\">\n<div class=\"wrap\">\n<div class=\"footer-top\">\n";
 
     // column 1: about
-    s += "<div>\n<a class=\"logo\" href=\"index.html\"><span class=\"logo-mark\">" + LOGO_SVG + "</span>" + SITE_NAME + "</a>\n";
+    s += "<div class=\"footer-about\">\n<a class=\"logo\" href=\"index.html\"><span class=\"logo-mark\">" + LOGO_SVG + "</span>" + SITE_NAME + "</a>\n";
     s += "<p>" + footerAboutText() + "</p>\n</div>\n";
 
     // column 2: pages
     s += "<div>\n<h4>" + FOOTER_PAGES_TITLE + "</h4>\n<ul>\n";
     for (int i = 0; i < (int)navLinks.size(); i++) {
-        s += "<li><a href=\"" + navLinks[i].file + "\">" + navLinks[i].label + "</a></li>\n";
+        s += "<li><a class=\"footer-link\" href=\"" + navLinks[i].file + "\">" + navLinks[i].label + "</a></li>\n";
     }
     s += "</ul>\n</div>\n";
 
     // column 3: projects (every project of the projects folder)
     s += "<div>\n<h4>" + FOOTER_PROJECTS_TITLE + "</h4>\n<ul>\n";
     for (int i = 0; i < (int)projects.size(); i++) {
-        s += "<li><a href=\"project-" + projects[i].slug + ".html\">" + projects[i].title + "</a></li>\n";
+        s += "<li><a class=\"footer-link\" href=\"project-" + projects[i].slug + ".html\">" + projects[i].title + "</a></li>\n";
     }
     s += "</ul>\n</div>\n";
 
     // column 4: contact
     s += "<div>\n<h4>" + FOOTER_CONTACT_TITLE + "</h4>\n<ul>\n";
-    s += "<li><a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a></li>\n";
-    s += "<li><a href=\"tel:" + telHref() + "\">" + PHONE + "</a></li>\n";
-    s += "<li><a href=\"" + LINKEDIN + "\" target=\"_blank\" rel=\"noopener\">LinkedIn</a></li>\n";
-    s += "<li><a href=\"" + assetUrl(CV_FILE) + "\" download>Download CV</a></li>\n";
+    s += "<li><a class=\"footer-link\" href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a></li>\n";
+    s += "<li><a class=\"footer-link\" href=\"tel:" + telHref() + "\">" + PHONE + "</a></li>\n";
+    s += "<li><a class=\"footer-social\" href=\"" + LINKEDIN + "\" target=\"_blank\" rel=\"noopener\"><b>in</b> LinkedIn</a></li>\n";
+    s += "<li><a class=\"footer-download\" href=\"resume.html\">Download CV</a></li>\n";
+    s += "<li><a class=\"footer-link\" href=\"video-introduction.html\">Video introduction</a></li>\n";
     s += "<li><span style=\"color:var(--muted);font-size:.95rem\">" + LOCATION + "</span></li>\n";
     s += "</ul>\n</div>\n</div>\n";
 

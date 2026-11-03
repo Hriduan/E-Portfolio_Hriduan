@@ -54,15 +54,48 @@ string homePage() {
     }
     s += "\n</div></div>\n</section>\n";
 
-    // featured projects (first three)
+    // featured projects (first four)
     s += "<section class=\"wrap\">\n<div class=\"section-head reveal\"><h2>Featured projects</h2>";
     s += "<p>Open a project to read about the work and explore its images.</p></div>\n<div class=\"projects-grid\">\n";
-    for (int i = 0; i < 3 && i < (int)projects.size(); i++) {
+    for (int i = 0; i < 4 && i < (int)projects.size(); i++) {
         s += projectTile(projects[i]);
     }
     s += "</div>\n<div class=\"btn-row\"><a class=\"btn\" href=\"projects.html\">View all projects</a></div>\n</section>\n";
 
     s += "<div class=\"section\">\n" + ctaHtml() + "</div>\n";
+    s += footerHtml();
+    return s;
+}
+
+// ---------------------- RESUME PAGE ----------------------
+string resumePage() {
+    string s = startPage("Resume", "resume.html");
+    s += pageTitle("Resume", "A concise overview of my education, technical skills, projects and experience.");
+    s += "<section class=\"wrap section resume-layout\">\n<div class=\"card resume-copy reveal\">";
+    s += "<p class=\"resume-kicker\">" + ROLE + " | " + LOCATION + "</p>";
+    s += "<h2>" + FULL_NAME + "</h2><p>" + TAGLINE + "</p>";
+    s += "<div class=\"resume-actions btn-row\"><a class=\"btn primary\" href=\"" + assetUrl(CV_FILE) + "\" download>Download PDF resume</a>";
+    s += "<a class=\"btn\" href=\"contact.html\">Contact me</a></div></div>\n";
+    s += "<div class=\"card resume-viewer reveal\"><object data=\"" + assetUrl(CV_FILE) + "\" type=\"application/pdf\" aria-label=\"Resume PDF\"><p>PDF preview is unavailable in this browser.</p></object></div>\n</section>\n";
+    s += ctaHtml();
+    s += footerHtml();
+    return s;
+}
+
+// ---------------------- VIDEO INTRODUCTION PAGE ----------------------
+string videoIntroductionPage() {
+    string s = startPage("Video Introduction", "video-introduction.html");
+    s += pageTitle("Video introduction", "A brief introduction to my background, interests, skills and career direction.");
+    s += "<section class=\"wrap section video-layout\">\n<div class=\"card video-card visual-intro reveal\"><div class=\"intro-heading\"><span class=\"tag\">Personal introduction</span><span class=\"intro-state\">Recording to be added</span></div>";
+    s += "<div class=\"intro-poster\"><img src=\"" + assetUrl(PROFILE_PHOTO) + "\" alt=\"" + FULL_NAME + "\"><div><span class=\"tag\">1-2 minute introduction</span><strong>Meet " + FULL_NAME + "</strong><span>Electrical and Electronic Engineering | Dhaka, Bangladesh</span></div></div>";
+    s += "<div class=\"intro-meta\"><span><b>Length</b>1-2 minutes</span><span><b>Format</b>MP4 with captions</span><span><b>Tone</b>Clear and professional</span></div>";
+    s += "<p class=\"video-status\">Record in a quiet, well-lit setting and speak naturally from the outline. Add the final MP4 here when ready.</p></div>\n";
+    s += "<div class=\"card script-card reveal\"><span class=\"tag\">Recording outline</span><h2>Tell the story in five beats</h2><ol>";
+    s += "<li>Introduce yourself, your background in Dhaka and your final-year EEE status.</li>";
+    s += "<li>Share your interests in electronics, semiconductor design and verification.</li>";
+    s += "<li>Highlight your technical, communication and leadership skills.</li>";
+    s += "<li>Mention your strongest projects and the results you learned from them.</li>";
+    s += "<li>Close with your short-term learning goals and long-term career vision.</li></ol></div>\n</section>\n";
     s += footerHtml();
     return s;
 }

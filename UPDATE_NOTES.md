@@ -12,9 +12,11 @@ Long About and project paragraphs are justified on screens at least 768 pixels w
 
 ## Project images
 
-The profile photograph and all eight original FSMD screenshots are unchanged. Twenty repeated demo images across the other five projects have been replaced with AI-generated illustrations. Every affected project card and gallery identifies these images as illustrations. The audio project uses conceptual software-workspace scenes rather than suggesting that a MATLAB project was a breadboard build.
+The profile photograph and all seven remaining FSMD screenshots are unchanged; only the eighth FSMD gallery entry was removed. Twenty repeated placeholder images across the other five projects have been replaced with locally authored technical SVG diagrams. The diagrams identify architecture, electrical relationships or idealized analysis without pretending to be photographs or measured evidence.
 
-These illustrations are not photographs of the actual projects. They must not be used as evidence of a build or measured result. Use your own project photographs and MATLAB screenshots if your professor requires original evidence. Check whether the assignment permits clearly labeled AI illustrations before submission. See `IMAGE_PROVENANCE.md`.
+These diagrams are not photographs of the actual projects. They must not be used as evidence of a build or measured result. Use your own project photographs and MATLAB screenshots if your professor requires original evidence. See `IMAGE_PROVENANCE.md`.
+
+The homepage now showcases four projects. A separate Resume page embeds the supplied PDF, and a Video Introduction page contains the required 1-2 minute recording outline and a visual introduction preview. The personal recording itself still needs to be supplied by Hriduan.
 
 ## Phone updates
 

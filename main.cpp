@@ -91,7 +91,9 @@ int main() {
     writeFile("index.html", homePage());
     writeFile("about.html", aboutPage());
     writeFile("projects.html", projectsPage());
+    writeFile("resume.html", resumePage());
     writeFile("experience.html", experiencePage());
+    writeFile("video-introduction.html", videoIntroductionPage());
     writeFile("contact.html", contactPage());
 
     // 5. one page for every project
