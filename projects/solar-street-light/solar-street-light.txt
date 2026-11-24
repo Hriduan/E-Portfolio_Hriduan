@@ -3,18 +3,17 @@ order: 3
 title: Solar Street Light & Phone Charger
 footer_title: Solar Lighting and Charging
 category: Renewable energy
-summary: A solar-powered street light with a phone charging point built from basic electronic components.
-image_note: Technical diagrams of the photovoltaic power path, charger and automatic lamp control. Component relationships are shown for clarity and are not a claim about a photographed prototype.
+summary: I paired a small solar-powered street light with a phone charging point.
+image_note: The technical diagrams show the photovoltaic power path and automatic lamp control. They explain the design and are not photographs of the prototype.
 
 [details]
-I built a solar-powered street light using basic components such as diodes and op-amps. I wanted to put my electronics knowledge to use in a simple renewable-energy project.
-The setup also includes a phone charging point. Combining lighting and charging in one prototype gave me a practical way to explore solar energy.
-
+I built a small solar-powered street light using basic components such as diodes and op-amps. The project gave me a practical way to explore renewable-energy electronics.
+I also added a phone charging point to the setup. Bringing lighting and charging together helped me see how one power source can serve two everyday needs.
 
 [features]
-Powered by solar energy
-Street light built with diodes and op-amps
-Mobile phone charging point
+Solar-powered lighting
+Street-light control using diodes and op-amps
+Phone charging point
 
 [tools]
 Solar energy, Diodes, Op-amps
@@ -24,4 +23,3 @@ solar-light-main-schematic.svg | Solar lamp and charger power schematic
 solar-light-panel-circuit.svg | PV charge protection circuit
 solar-light-circuit-schematic.svg | LDR comparator and LED driver circuit
 solar-light-charger-output.svg | Regulated USB output waveform
-

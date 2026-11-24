@@ -3,18 +3,18 @@ order: 4
 title: Ultrasound Sonar & RFID Access
 footer_title: Ultrasonic Sonar and RFID
 category: Arduino
-summary: An Arduino ultrasound sonar project paired with an RFID access control setup.
-image_note: Technical diagrams of the Arduino, ultrasonic timing, RFID and access-control signal paths. They explain the design without presenting conceptual artwork as physical evidence.
+summary: I combined an Arduino ultrasonic sonar with an RFID access-control setup.
+image_note: These technical diagrams explain the sonar and RFID signal paths without presenting conceptual artwork as physical evidence.
 
 [details]
-I made an ultrasound sonar system with Arduino and connected it to an RFID access control setup. The project brought sensing and access control together in one build.
-Working on both parts helped me practise connecting electronic modules and thinking through how they should work as a system.
-
+I built an Arduino-based ultrasonic sonar and paired it with an RFID access-control setup. Bringing both modules into one project let me explore distance sensing and card-based access together.
+The HC-SR04 estimates distance from the time taken by an ultrasonic pulse to return. The RFID reader checks a tag before the access-control output responds. Working through both parts helped me practise sensor interfacing and basic embedded-system integration.
+Reliable operation depends on a clear path for the sonar echo and a readable RFID tag. The project gave me a useful starting point for thinking about how sensing and authentication can share a controller.
 
 [features]
-Ultrasound sonar built with Arduino
-RFID access and control
-Both parts working in one system
+Arduino-based ultrasonic distance sensing
+RFID access control
+Combined sensor and authentication workflow
 
 [tools]
 Arduino, Ultrasonic sensor, RFID
@@ -24,4 +24,3 @@ sonar-rfid-main-schematic.svg | Arduino sonar and RFID system schematic
 sonar-arduino-board-pinout.svg | Arduino pin allocation for sonar and RFID
 sonar-ultrasonic-test-waveform.svg | HC-SR04 trigger and echo timing output
 sonar-rfid-access-schematic.svg | RFID access actuator circuit
-

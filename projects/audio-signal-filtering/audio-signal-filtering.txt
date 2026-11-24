@@ -3,24 +3,25 @@ order: 5
 title: Audio Signal Filtering
 footer_title: MATLAB Audio Signal Filtering
 category: Signal processing
-summary: I designed bandpass and low-pass filters in MATLAB to process and clean up audio signals.
-image_note: Recreated technical plots and block diagrams for the MATLAB workflow. They show the signal-processing method and expected filter behavior, not fabricated measurements from an unavailable dataset.
+summary: I compared two FIR filters in MATLAB after adding white Gaussian noise to an audio recording.
+image_note: These figures are taken from the project report and show the filtering workflow and MATLAB results.
 
 [details]
-I used MATLAB to design bandpass and low-pass filters for audio signals. The project gave me a way to apply filter design beyond the equations we study in class.
-Working with audio helped me connect the purpose of each filter to the signal it was processing. This was a MATLAB-based project rather than a physical filter-circuit build.
-
+I worked with Md. Sabbir Uzzaman Khan on a MATLAB study of audio noise reduction. We added white Gaussian noise at 15 dB SNR then compared low-pass and band-pass FIR filters in MATLAB R2024a.
+The low-pass filter was designed around a 4 kHz passband and a 4.4 kHz stopband. It reduced high-frequency hiss but also made the audio quieter and more muffled. The band-pass filter kept the speech range from 300 Hz to 4 kHz while rejecting frequencies below 200 Hz and above 4.5 kHz. Speech stayed clearer and louder although noise remained where it overlapped with the voice.
+The time and frequency plots made the main trade-off easy to hear: simple filters can reduce noise but they cannot remove noise that shares the same frequencies as speech. Fixed cutoffs also limit how well the design can handle different recordings.
 
 [features]
-Bandpass filter design
-Low pass filter design
-Audio signal processing in MATLAB
+Added white Gaussian noise at 15 dB SNR
+Compared low-pass and band-pass FIR filters
+Analyzed original noisy and filtered signals in time and frequency
 
 [tools]
-MATLAB, Filter design, Signal processing
+MATLAB R2024a, FIR filter design, White Gaussian noise, FFT analysis
 
 [photos]
-audio-filter-main-output.svg | Audio input and filtered output comparison
-audio-filter-bandpass-response.svg | Bandpass magnitude response output
-audio-filter-lowpass-response.svg | Low-pass magnitude response output
-audio-filter-matlab-output.svg | MATLAB result comparison
+audio-signal-results.png | Original noisy and low-pass filtered signal in the time domain
+audio-lowpass-response.png | Low-pass FIR magnitude response from the report
+audio-bandpass-response.png | Band-pass FIR magnitude response from the report
+audio-frequency-comparison.png | Original noisy and filtered signal spectra
+audio-filtering-workflow.png | FIR audio filtering workflow

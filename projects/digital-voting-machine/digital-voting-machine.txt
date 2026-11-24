@@ -3,25 +3,24 @@ order: 1
 title: Digital Voting Machine
 footer_title: NID Verified Voting Machine
 category: Embedded system
-summary: I built an electronic voting machine that scans NID cards and checks voters automatically.
-image_note: Technical diagrams of the signal path, reader interface, control circuit and verification flow. They document the intended architecture rather than claim to be photographs of the prototype.
+summary: An Arduino and RFID reader verify student voters before the machine records a vote.
+image_note: The prototype photo and circuit figures are taken from the student-election project report.
 
 [details]
-I wanted to explore how electronics could make voter checks more consistent. For this project I built a voting machine that scans a voter's NID card and verifies the person automatically.
-The idea was to check the voter before allowing a vote rather than depend entirely on manual checks. My goal was a more secure and reliable voting process.
-
+I worked on this student-election voting machine with Akib Rahman and Reday Islam as well as Habiba Akter and Md. Abdullah Abrar. An Arduino Uno R3 reads each student's RFID card through an MFRC522 module and enables voting only after the card is accepted.
+After verification the voter presses a button to cast a vote. Logic gates pass the valid input to a 7493 counter and a 7447-family decoder drives the seven-segment display. The report describes testing in which authorized cards were recognized in about 100 to 150 ms and the vote count updated after each accepted input.
+The report estimates current use at about 160 mA and lists the total component cost as BDT 2,605. This makes the prototype a practical classroom demonstration rather than a production election system. RFID cards can be lost or shared and the Arduino Uno has limited storage for voter records. Larger elections would need stronger identity checks and a more scalable counter and data store.
 
 [features]
-Scans NID cards
-Automatic voter verification
-Made for a secure and reliable voting process
+RFID card check for student voters
+Button-enabled vote input
+7493 counter and seven-segment vote display
+Low-cost prototype for small elections
 
 [tools]
-Electronics, Microcontroller, NID card scanning
+Arduino Uno R3, MFRC522 RFID, IC 7493 counter, IC 7447 decoder, IC 7408 and 7432 logic gates, Seven-segment display, Push button
 
 [photos]
-voting-machine-main-schematic.svg | NID reader, controller, display and vote input schematic
-voting-machine-scanner-schematic.svg | Card reader interface and MCU signal wiring
-voting-machine-circuit-schematic.svg | Vote input, indicator and common-ground circuit
-voting-machine-testing-waveform.svg | Card validation and vote-enable timing output
-
+voting-machine-prototype.png | Voting machine prototype from the report
+voting-machine-rfid-wiring.png | Arduino Uno and MFRC522 wiring
+voting-machine-vote-counter-schematic.png | Vote counter and display circuit

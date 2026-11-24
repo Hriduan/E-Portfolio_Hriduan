@@ -35,12 +35,12 @@
 <section class="wrap page-hero">
 <a class="crumb" href="projects.html">&larr; Back to all projects</a>
 <h1>Ultrasound Sonar &amp; RFID Access</h1>
-<p>An Arduino ultrasound sonar project paired with an RFID access control setup.</p>
+<p>I combined an Arduino ultrasonic sonar with an RFID access-control setup.</p>
 </section>
 <section class="wrap section">
 <div class="detail">
 <div>
-<p class="image-note">Technical diagrams of the Arduino, ultrasonic timing, RFID and access-control signal paths. They explain the design without presenting conceptual artwork as physical evidence.</p>
+<p class="image-note">These technical diagrams explain the sonar and RFID signal paths without presenting conceptual artwork as physical evidence.</p>
 <div class="gallery" id="gallery">
 <figure class="reveal"><a href="#pic-0"><img src="projects/ultrasound-sonar-rfid/sonar-rfid-main-schematic.svg" alt="Arduino sonar and RFID system schematic" loading="lazy"><figcaption>Arduino sonar and RFID system schematic</figcaption></a></figure>
 <figure class="reveal"><a href="#pic-1"><img src="projects/ultrasound-sonar-rfid/sonar-arduino-board-pinout.svg" alt="Arduino pin allocation for sonar and RFID" loading="lazy"><figcaption>Arduino pin allocation for sonar and RFID</figcaption></a></figure>
@@ -53,13 +53,14 @@
 <a class="lightbox" id="pic-3" href="#gallery"><div><img src="projects/ultrasound-sonar-rfid/sonar-rfid-access-schematic.svg" alt=""><p>RFID access actuator circuit</p></div></a>
 <div class="text-block">
 <h2>About this project</h2>
-<p>I made an ultrasound sonar system with Arduino and connected it to an RFID access control setup. The project brought sensing and access control together in one build.</p>
-<p>Working on both parts helped me practise connecting electronic modules and thinking through how they should work as a system.</p>
+<p>I built an Arduino-based ultrasonic sonar and paired it with an RFID access-control setup. Bringing both modules into one project let me explore distance sensing and card-based access together.</p>
+<p>The HC-SR04 estimates distance from the time taken by an ultrasonic pulse to return. The RFID reader checks a tag before the access-control output responds. Working through both parts helped me practise sensor interfacing and basic embedded-system integration.</p>
+<p>Reliable operation depends on a clear path for the sonar echo and a readable RFID tag. The project gave me a useful starting point for thinking about how sensing and authentication can share a controller.</p>
 <h2>What it does</h2>
 <ul class="check">
-<li>Ultrasound sonar built with Arduino</li>
-<li>RFID access and control</li>
-<li>Both parts working in one system</li>
+<li>Arduino-based ultrasonic distance sensing</li>
+<li>RFID access control</li>
+<li>Combined sensor and authentication workflow</li>
 </ul>
 </div>
 </div>

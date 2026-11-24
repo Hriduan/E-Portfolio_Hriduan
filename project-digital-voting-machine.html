@@ -35,31 +35,31 @@
 <section class="wrap page-hero">
 <a class="crumb" href="projects.html">&larr; Back to all projects</a>
 <h1>Digital Voting Machine</h1>
-<p>I built an electronic voting machine that scans NID cards and checks voters automatically.</p>
+<p>An Arduino and RFID reader verify student voters before the machine records a vote.</p>
 </section>
 <section class="wrap section">
 <div class="detail">
 <div>
-<p class="image-note">Technical diagrams of the signal path, reader interface, control circuit and verification flow. They document the intended architecture rather than claim to be photographs of the prototype.</p>
+<p class="image-note">The prototype photo and circuit figures are taken from the student-election project report.</p>
 <div class="gallery" id="gallery">
-<figure class="reveal"><a href="#pic-0"><img src="projects/digital-voting-machine/voting-machine-main-schematic.svg" alt="NID reader, controller, display and vote input schematic" loading="lazy"><figcaption>NID reader, controller, display and vote input schematic</figcaption></a></figure>
-<figure class="reveal"><a href="#pic-1"><img src="projects/digital-voting-machine/voting-machine-scanner-schematic.svg" alt="Card reader interface and MCU signal wiring" loading="lazy"><figcaption>Card reader interface and MCU signal wiring</figcaption></a></figure>
-<figure class="reveal"><a href="#pic-2"><img src="projects/digital-voting-machine/voting-machine-circuit-schematic.svg" alt="Vote input, indicator and common-ground circuit" loading="lazy"><figcaption>Vote input, indicator and common-ground circuit</figcaption></a></figure>
-<figure class="reveal"><a href="#pic-3"><img src="projects/digital-voting-machine/voting-machine-testing-waveform.svg" alt="Card validation and vote-enable timing output" loading="lazy"><figcaption>Card validation and vote-enable timing output</figcaption></a></figure>
+<figure class="reveal"><a href="#pic-0"><img src="projects/digital-voting-machine/voting-machine-prototype.png" alt="Voting machine prototype from the report" loading="lazy"><figcaption>Voting machine prototype from the report</figcaption></a></figure>
+<figure class="reveal"><a href="#pic-1"><img src="projects/digital-voting-machine/voting-machine-rfid-wiring.png" alt="Arduino Uno and MFRC522 wiring" loading="lazy"><figcaption>Arduino Uno and MFRC522 wiring</figcaption></a></figure>
+<figure class="reveal"><a href="#pic-2"><img src="projects/digital-voting-machine/voting-machine-vote-counter-schematic.png" alt="Vote counter and display circuit" loading="lazy"><figcaption>Vote counter and display circuit</figcaption></a></figure>
 </div>
-<a class="lightbox" id="pic-0" href="#gallery"><div><img src="projects/digital-voting-machine/voting-machine-main-schematic.svg" alt=""><p>NID reader, controller, display and vote input schematic</p></div></a>
-<a class="lightbox" id="pic-1" href="#gallery"><div><img src="projects/digital-voting-machine/voting-machine-scanner-schematic.svg" alt=""><p>Card reader interface and MCU signal wiring</p></div></a>
-<a class="lightbox" id="pic-2" href="#gallery"><div><img src="projects/digital-voting-machine/voting-machine-circuit-schematic.svg" alt=""><p>Vote input, indicator and common-ground circuit</p></div></a>
-<a class="lightbox" id="pic-3" href="#gallery"><div><img src="projects/digital-voting-machine/voting-machine-testing-waveform.svg" alt=""><p>Card validation and vote-enable timing output</p></div></a>
+<a class="lightbox" id="pic-0" href="#gallery"><div><img src="projects/digital-voting-machine/voting-machine-prototype.png" alt=""><p>Voting machine prototype from the report</p></div></a>
+<a class="lightbox" id="pic-1" href="#gallery"><div><img src="projects/digital-voting-machine/voting-machine-rfid-wiring.png" alt=""><p>Arduino Uno and MFRC522 wiring</p></div></a>
+<a class="lightbox" id="pic-2" href="#gallery"><div><img src="projects/digital-voting-machine/voting-machine-vote-counter-schematic.png" alt=""><p>Vote counter and display circuit</p></div></a>
 <div class="text-block">
 <h2>About this project</h2>
-<p>I wanted to explore how electronics could make voter checks more consistent. For this project I built a voting machine that scans a voter's NID card and verifies the person automatically.</p>
-<p>The idea was to check the voter before allowing a vote rather than depend entirely on manual checks. My goal was a more secure and reliable voting process.</p>
+<p>I worked on this student-election voting machine with Akib Rahman and Reday Islam as well as Habiba Akter and Md. Abdullah Abrar. An Arduino Uno R3 reads each student's RFID card through an MFRC522 module and enables voting only after the card is accepted.</p>
+<p>After verification the voter presses a button to cast a vote. Logic gates pass the valid input to a 7493 counter and a 7447-family decoder drives the seven-segment display. The report describes testing in which authorized cards were recognized in about 100 to 150 ms and the vote count updated after each accepted input.</p>
+<p>The report estimates current use at about 160 mA and lists the total component cost as BDT 2,605. This makes the prototype a practical classroom demonstration rather than a production election system. RFID cards can be lost or shared and the Arduino Uno has limited storage for voter records. Larger elections would need stronger identity checks and a more scalable counter and data store.</p>
 <h2>What it does</h2>
 <ul class="check">
-<li>Scans NID cards</li>
-<li>Automatic voter verification</li>
-<li>Made for a secure and reliable voting process</li>
+<li>RFID card check for student voters</li>
+<li>Button-enabled vote input</li>
+<li>7493 counter and seven-segment vote display</li>
+<li>Low-cost prototype for small elections</li>
 </ul>
 </div>
 </div>
@@ -67,7 +67,7 @@
 <h3>Type</h3>
 <div class="tags"><span class="tag">Embedded system</span></div>
 <h3>Tools and topics</h3>
-<div class="tags"><span class="tag">Electronics</span><span class="tag">Microcontroller</span><span class="tag">NID card scanning</span></div>
+<div class="tags"><span class="tag">Arduino Uno R3</span><span class="tag">MFRC522 RFID</span><span class="tag">IC 7493 counter</span><span class="tag">IC 7447 decoder</span><span class="tag">IC 7408 and 7432 logic gates</span><span class="tag">Seven-segment display</span><span class="tag">Push button</span></div>
 <h3>Made by</h3>
 <p>Hriduan Omor Siam</p>
 </aside>

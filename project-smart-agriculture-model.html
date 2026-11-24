@@ -35,31 +35,35 @@
 <section class="wrap page-hero">
 <a class="crumb" href="projects.html">&larr; Back to all projects</a>
 <h1>Smart Agriculture Model</h1>
-<p>A small farm prototype that brings automatic irrigation together with a food dispenser and RFID access.</p>
+<p>I combined proximity sensing and RFID access with automatic feeding and soil-moisture-based irrigation.</p>
 </section>
 <section class="wrap section">
 <div class="detail">
 <div>
-<p class="image-note">Technical diagrams of the irrigation, feeder and RFID subsystems. They describe the electrical relationships without presenting conceptual artwork as physical evidence.</p>
+<p class="image-note">These photos and figures come from the project report and show the prototype wiring and reported test results.</p>
 <div class="gallery" id="gallery">
-<figure class="reveal"><a href="#pic-0"><img src="projects/smart-agriculture-model/smart-farm-main-schematic.svg" alt="Smart-farm controller and subsystem schematic" loading="lazy"><figcaption>Smart-farm controller and subsystem schematic</figcaption></a></figure>
-<figure class="reveal"><a href="#pic-1"><img src="projects/smart-agriculture-model/smart-farm-irrigation-circuit.svg" alt="Soil probe comparator and pump driver circuit" loading="lazy"><figcaption>Soil probe comparator and pump driver circuit</figcaption></a></figure>
-<figure class="reveal"><a href="#pic-2"><img src="projects/smart-agriculture-model/smart-farm-dispenser-circuit.svg" alt="Dispenser motor driver circuit" loading="lazy"><figcaption>Dispenser motor driver circuit</figcaption></a></figure>
-<figure class="reveal"><a href="#pic-3"><img src="projects/smart-agriculture-model/smart-farm-rfid-gate-circuit.svg" alt="RFID gate control circuit" loading="lazy"><figcaption>RFID gate control circuit</figcaption></a></figure>
+<figure class="reveal"><a href="#pic-0"><img src="projects/smart-agriculture-model/smart-farm-prototype.png" alt="Prototype hardware model from the report" loading="lazy"><figcaption>Prototype hardware model from the report</figcaption></a></figure>
+<figure class="reveal"><a href="#pic-1"><img src="projects/smart-agriculture-model/smart-farm-system-block-diagram.png" alt="Smart farm sensor and actuator overview" loading="lazy"><figcaption>Smart farm sensor and actuator overview</figcaption></a></figure>
+<figure class="reveal"><a href="#pic-2"><img src="projects/smart-agriculture-model/smart-farm-circuit.png" alt="Integrated circuit wiring from the report" loading="lazy"><figcaption>Integrated circuit wiring from the report</figcaption></a></figure>
+<figure class="reveal"><a href="#pic-3"><img src="projects/smart-agriculture-model/smart-farm-current-profile.png" alt="Reported system current across operating states" loading="lazy"><figcaption>Reported system current across operating states</figcaption></a></figure>
+<figure class="reveal"><a href="#pic-4"><img src="projects/smart-agriculture-model/smart-farm-moisture-hysteresis.png" alt="Soil moisture thresholds used for pump control" loading="lazy"><figcaption>Soil moisture thresholds used for pump control</figcaption></a></figure>
 </div>
-<a class="lightbox" id="pic-0" href="#gallery"><div><img src="projects/smart-agriculture-model/smart-farm-main-schematic.svg" alt=""><p>Smart-farm controller and subsystem schematic</p></div></a>
-<a class="lightbox" id="pic-1" href="#gallery"><div><img src="projects/smart-agriculture-model/smart-farm-irrigation-circuit.svg" alt=""><p>Soil probe comparator and pump driver circuit</p></div></a>
-<a class="lightbox" id="pic-2" href="#gallery"><div><img src="projects/smart-agriculture-model/smart-farm-dispenser-circuit.svg" alt=""><p>Dispenser motor driver circuit</p></div></a>
-<a class="lightbox" id="pic-3" href="#gallery"><div><img src="projects/smart-agriculture-model/smart-farm-rfid-gate-circuit.svg" alt=""><p>RFID gate control circuit</p></div></a>
+<a class="lightbox" id="pic-0" href="#gallery"><div><img src="projects/smart-agriculture-model/smart-farm-prototype.png" alt=""><p>Prototype hardware model from the report</p></div></a>
+<a class="lightbox" id="pic-1" href="#gallery"><div><img src="projects/smart-agriculture-model/smart-farm-system-block-diagram.png" alt=""><p>Smart farm sensor and actuator overview</p></div></a>
+<a class="lightbox" id="pic-2" href="#gallery"><div><img src="projects/smart-agriculture-model/smart-farm-circuit.png" alt=""><p>Integrated circuit wiring from the report</p></div></a>
+<a class="lightbox" id="pic-3" href="#gallery"><div><img src="projects/smart-agriculture-model/smart-farm-current-profile.png" alt=""><p>Reported system current across operating states</p></div></a>
+<a class="lightbox" id="pic-4" href="#gallery"><div><img src="projects/smart-agriculture-model/smart-farm-moisture-hysteresis.png" alt=""><p>Soil moisture thresholds used for pump control</p></div></a>
 <div class="text-block">
 <h2>About this project</h2>
-<p>I put together this small farm model to explore a few everyday uses of automation. It combines an automatic irrigation setup with a food dispenser in one prototype.</p>
-<p>I also added an RFID card system at the entrance to control access. Building the model let me bring these separate functions together in a practical setup.</p>
+<p>I developed the model with Md. Abdullah Abrar, Samiul Alim Siam and Aftabul Kanzan. An Arduino Uno brings four sensing tasks together: an HC-SR04 checks for nearby people, an MFRC522 reader checks RFID cards, an HW-201 infrared sensor detects an animal at the feeder and a resistive probe tracks soil moisture.</p>
+<p>The controller wakes a 16x2 LCD when someone comes within 30 cm. A small servo opens the food gate when the infrared sensor detects an animal. For irrigation the soil probe controls a mini pump through a 5V relay. The report describes a two-threshold control band: the pump turns on above an ADC reading of 620 and switches off below 580.</p>
+<p>During workbench testing the report records 52 mA in standby and 114 mA with the display awake. The setup also has practical limits: direct sunlight can interfere with the infrared sensor, the exposed soil probe can corrode and simultaneous motor loads can pull down the supply voltage.</p>
 <h2>What it does</h2>
 <ul class="check">
-<li>Automatic irrigation setup</li>
-<li>Food dispenser</li>
-<li>RFID card system for the farm entrance</li>
+<li>Ultrasonic proximity sensing wakes the display</li>
+<li>RFID reader controls access</li>
+<li>Infrared sensor and servo automate the food gate</li>
+<li>Soil moisture probe and relay control irrigation</li>
 </ul>
 </div>
 </div>
@@ -67,7 +71,7 @@
 <h3>Type</h3>
 <div class="tags"><span class="tag">Automation</span></div>
 <h3>Tools and topics</h3>
-<div class="tags"><span class="tag">Automation</span><span class="tag">RFID</span><span class="tag">Microcontroller</span></div>
+<div class="tags"><span class="tag">Arduino Uno</span><span class="tag">HC-SR04</span><span class="tag">MFRC522 RFID</span><span class="tag">HW-201 IR</span><span class="tag">HL-69 soil probe</span><span class="tag">SG90 servo</span><span class="tag">5V relay</span><span class="tag">16x2 I2C LCD</span></div>
 <h3>Made by</h3>
 <p>Hriduan Omor Siam</p>
 </aside>
